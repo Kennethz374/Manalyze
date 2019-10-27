@@ -3,9 +3,43 @@ import axios from 'axios';
 import { Layout, Menu } from 'antd';
 import Loginpage from './components/Login';
 import Stylist from "./components/Stylist"
-import Navigation from './components/Navigation'
+import DetailStylists from "./components/DetailStylist"
+import Products from "./components/Products"
+import Services from "./components/Services"
+import About from "./components/About"
 
-const { Footer } = Layout;
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+const { Footer,Header } = Layout;
+
+ function Navigation () {
+   return (
+      <Header>
+      <div className="logo" />
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={['2']}
+        style={{ lineHeight: '64px' }}
+        >
+        <Menu.Item key="1"><Link to="/"> Home </Link></Menu.Item>
+        <Menu.Item key="2"><Link to="/hairstylists"> Hairstylists </Link></Menu.Item>
+        <Menu.Item key="3"><Link to="/products"> Products </Link></Menu.Item>
+        <Menu.Item key="4"><Link to="/services"> Services </Link></Menu.Item>
+        <Menu.Item key="5"><Link to="/aboutus"> About Us </Link></Menu.Item>
+        <Menu.Item key="6"><Link to="/login"> Login </Link></Menu.Item>
+        <Menu.Item key="7"><Link to="/register"> Register </Link></Menu.Item>
+
+      </Menu>
+      </Header>
+   )
+ }
+  
+
 
 export default function Homepage (props) {
 
@@ -26,25 +60,73 @@ export default function Homepage (props) {
   
     return (
       <>
-      {
-        page === "Homepage" &&
-      <Layout className="layout">
+      <Router>
+        <Route exact path="/">
+          <Layout className="layout">
+          <Navigation/>
+          <Stylist/>
 
-      <Navigation/>
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
 
-      <Stylist/>
+          </Footer>
 
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+          </Layout>
+        </Route>
 
-      </Footer>
+        <Route exact path="/login">
+          <Layout className="layout">
+            <Navigation/>
+            <Loginpage/>  
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
 
-      </Layout>
-      }
+            </Footer>
+          </Layout>
+        </Route>
 
-      {
-        page === "Loginpage" &&  <Loginpage/>
-      }
+        <Route exact path="/hairstylists">
+          <Layout className="layout">
+            <Navigation/>
+            <DetailStylists/>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+
+            </Footer>
+          </Layout>
+        </Route>
+
+        <Route exact path="/products">
+          <Layout className="layout">
+            <Navigation/>
+            <Products/>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+
+            </Footer>
+          </Layout>
+        </Route>
+
+        <Route exact path="/services">
+          <Layout className="layout">
+            <Navigation/>
+            <Services/>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+
+            </Footer>
+          </Layout>
+        </Route>
+
+        <Route exact path="/aboutus">
+          <Layout className="layout">
+            <Navigation/>
+            <About/>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+
+            </Footer>
+          </Layout>
+        </Route>
+
+      </Router>
       </>
+
+    
     );
 
 }
