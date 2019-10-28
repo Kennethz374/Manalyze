@@ -1,0 +1,53 @@
+.navbar {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 8vh;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.8;
+  /* padding: none; */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; 
+ }
+ .booking_page{
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+  /* position: fixed;
+  top: 0; */
+ }
+ .barber{
+  background-color:green;
+  width: 30vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+ }
+ .date_picker{
+  background-color:red;
+  width: 30vw;
+  height:30vh;
+  padding-left: 20px;
+ }
+ .check_box{
+  background-color:blue;
+  width: 30vw;
+  height:30vh;
+  padding-left: 20px;
+ }
+.info{
+  padding-left: 20px;
+  padding-top:0px;
+  margin-top:0px
+}
+.booking_form{
+  width: 30vw;
+  height:50vh;
+  background-color:yellow;
+
+}
