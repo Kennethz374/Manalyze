@@ -28,7 +28,7 @@ export default function Homepage (props) {
           <Layout className="layout">
           <Navigation/>
           <Stylist/>
-
+          
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
 
           </Footer>
