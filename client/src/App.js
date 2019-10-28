@@ -1,62 +1,25 @@
 import React, { Component, useState } from 'react';
-import axios from 'axios';
-import { Layout, Menu } from 'antd';
+// import axios from 'axios';
+import { Layout } from 'antd';
 import Loginpage from './components/Login';
 import Stylist from "./components/Stylist"
 import DetailStylists from "./components/DetailStylist"
 import Products from "./components/Products"
 import Services from "./components/Services"
 import About from "./components/About"
-
+import Admin from "./components/Admin/Index"
+import Navigation from "./components/Navigation"
 import {
   BrowserRouter as Router,
-  Switch,
+  // Switch,
   Route,
   Link
 } from "react-router-dom";
-const { Footer,Header } = Layout;
-
- function Navigation () {
-   return (
-      <Header>
-      <div className="logo" />
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
-        >
-        <Menu.Item key="1"><Link to="/"> Home </Link></Menu.Item>
-        <Menu.Item key="2"><Link to="/hairstylists"> Hairstylists </Link></Menu.Item>
-        <Menu.Item key="3"><Link to="/products"> Products </Link></Menu.Item>
-        <Menu.Item key="4"><Link to="/services"> Services </Link></Menu.Item>
-        <Menu.Item key="5"><Link to="/aboutus"> About Us </Link></Menu.Item>
-        <Menu.Item key="6"><Link to="/login"> Login </Link></Menu.Item>
-        <Menu.Item key="7"><Link to="/register"> Register </Link></Menu.Item>
-
-      </Menu>
-      </Header>
-   )
- }
+const { Footer } = Layout;
   
-
-
 export default function Homepage (props) {
 
-  const [page, setPage]=useState("Homepage")
-  // const fetchData = () => {
-  //   axios.get('/api/data') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
-
-  //     console.log(response.data.message) // Just the message
-  //     setMessage({
-  //       message: response.data.message
-  //     });
-  //   }) 
-  // }
-
+  // const [page, setPage]=useState("Homepage")
   
     return (
       <>
@@ -123,7 +86,12 @@ export default function Homepage (props) {
           </Layout>
         </Route>
 
+        <Route exact path="/admin">
+              <Admin/>
+        </Route>
+
       </Router>
+
       </>
 
     
