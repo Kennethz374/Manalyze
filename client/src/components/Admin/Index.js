@@ -3,6 +3,7 @@ import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Navigation from "../Navigation"
 import Schedule from "./Schedule"
 import SideBar from "./Sidebar"
+import Pie from "./Statistics"
 import {
   BrowserRouter as Router,
   // Switch,
@@ -25,7 +26,17 @@ export default class Admin extends React.Component {
               <Navigation/>
 
               <Content style={{ margin: '0 16px' }}>
-                <Schedule/>
+                <Router>
+                  <Route exact path= "/admin/schedule">
+                   <Schedule/>
+                  </Route>
+
+                  <Route exact path= "/admin/statistics">
+                    <h1>123123123</h1>
+                  </Route>
+
+                </Router>
+
               </Content>
 
               <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
