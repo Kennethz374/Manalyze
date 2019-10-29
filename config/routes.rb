@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get '/data', to: 'tests#index'
     
     resources :employees
+    resources :users
   end
 
   get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do

@@ -11,6 +11,7 @@ const gridStyle = {
 
 
 export default function DetailStylists () {
+  
   return (
     <>
     <Content style={{ padding: '0 50px' }}>
