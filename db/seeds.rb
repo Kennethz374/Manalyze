@@ -10,7 +10,7 @@ employees = Employee.create([
   {
     name:"Kenneth",
     salary: 10000,
-    picture: "https://images.unsplash.com/photo-1560259266-5b736e675d37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    picture: "https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
     rating: 5
   },
   {

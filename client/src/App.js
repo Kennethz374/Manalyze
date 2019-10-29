@@ -102,15 +102,15 @@ export default function Homepage (props) {
 
   
   
-  const fetchData = () => {
-    axios.get('/api/employees') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
+  // const fetchData = () => {
+  //   axios.get('/api/employees') // You can simply make your requests to "/api/whatever you want"
+  //   .then((response) => {
+  //     // handle success
+  //     console.log(response.data) // The entire response from the Rails API
 
-      // console.log(response.data.message) // Just the message
-      // setMessage({
-      //   message: response.data.message
-      });
-    }) 
-  }
+  //     // console.log(response.data.message) // Just the message
+  //     // setMessage({
+  //     //   message: response.data.message
+  //     });
+  //   }) 
+  // }
