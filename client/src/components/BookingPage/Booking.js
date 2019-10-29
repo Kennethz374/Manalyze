@@ -12,41 +12,22 @@ import BookingForm from './BookingForm'
 
 
 export default function Booking() {
-  function collectFormDate(name,email,phone,gender,date,checkBox){
-    console.log(name,email,phone,gender,date,checkBox)
-    // console.log( checkBox)
+  function collectFormDate(name,phone,date,checkBox){
+    console.log(name,phone,date,checkBox)
+  
   }
 
 
     return (
-      <div className='booking_page'>
-        <div className='navbar'>
-        </div>
-        <div className='barber'>
+      <div >
+        {/* <div className='navbar'>
+        </div> */}
+        <div>
           <Barber />
-          {/* <img src="https://mdbootstrap.com/img/Others/documentation/1.jpg" height="128" width="128"/> */}
-          {/* <div className='info'>
-            <div className='name'>
-              Name
-            </div>
-            <div className='description'>
-              discription:this is a description
-            </div>
-          </div> */}
        </div>
-       <div className='booking_form'>
+       <div >
         <BookingForm getValue={collectFormDate}/>
        </div>
-       
-       {/* <div className='date_picker'>
-        Date: <DateChoose/>
-       </div>
-       <div className='check_box'>
-        <SelectServices/>
-       </div>
-       <div>
-        <Button variant="primary">Booking</Button>
-       </div> */}
       </div>
     );
   }
