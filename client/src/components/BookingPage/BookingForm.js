@@ -5,25 +5,23 @@ import { Checkbox, Row, Col } from 'antd';
 import 'antd/dist/antd.css'
 
 export default function BookingForm(props){
-//form
+  console.log(props.getValue)
+//form//
   const[userName, setName] = useState('');
-  const[email,setEmail] = useState('')
+  // const[email,setEmail] = useState('')
   const[phoneNumber, setPhoneNumber]= useState('');
-  const[gender, setGender] = useState('')
+  // const[gender, setGender] = useState('')
   
-//date picker
+//date picker//
   const [startDate, setStartDate] = useState(new Date());
   const date = startDate.toString().substr(0,21)
-// console.log(date)
-//check box
+
+//check box//
 
 const[checkBox,setcheckBox] = useState([])
-// function onChange(checkedValues) {
-//   setcheckBox(checkedValues);
-// }
 function onChange(checkedValues) {
   setcheckBox(checkedValues)
-  console.log('checked = ', checkedValues);
+  // console.log('checked = ', checkedValues);
 }
 
   return(
@@ -34,11 +32,11 @@ function onChange(checkedValues) {
             onChange={(event) => setName(event.target.value)}/>
     </Form.Group>
 
-      <Form.Group controlId="formBasicEmail">
+      {/* <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" value={email}
             onChange={(event) => setEmail(event.target.value)}/>
-      </Form.Group>
+      </Form.Group> */}
 
       {/* <Form.Group controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
@@ -51,12 +49,12 @@ function onChange(checkedValues) {
             onChange={(event) => setPhoneNumber(event.target.value)}/>
       </Form.Group>
       
-      <Form.Group controlId="formBasicPassword">
+      {/* <Form.Group controlId="formBasicPassword">
         <Form.Label>Gender</Form.Label>
         <Form.Control type="text" placeholder="Gender" value={gender}
             onChange={(event) => setGender(event.target.value)}/>
-      </Form.Group>
-
+      </Form.Group> */}
+      <p>select date</p>
       <DatePicker
       selected={startDate}
       onChange={date => setStartDate(date)}
@@ -87,7 +85,7 @@ function onChange(checkedValues) {
           </Row>
         </Checkbox.Group>
 
-        <Button variant="primary" onClick={(event) => props.getValue(userName, email,phoneNumber,gender,date,checkBox)}>Booking</Button>
+        <Button variant="primary" onClick={(event) => props.getValue(userName, phoneNumber,date,checkBox)}>Booking</Button>
     
   </Form>
   )

@@ -18,7 +18,7 @@ export default function DetailStylists () {
 
       <Card title="Feature Hairstylists">
 
-        <Card.Grid style={gridStyle}>Content</Card.Grid>
+        <Card.Grid style={gridStyle}>Content56654</Card.Grid>
         <Card.Grid style={gridStyle}>Content</Card.Grid>
         <Card.Grid style={gridStyle}>Content</Card.Grid>
         <Card.Grid style={gridStyle}>Content</Card.Grid>
