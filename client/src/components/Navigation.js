@@ -24,7 +24,7 @@ const { Header } = Layout;
         <Menu.Item key="5"><Link to="/aboutus"> About Us </Link></Menu.Item>
         <Menu.Item key="6"><Link to="/login"> Login </Link></Menu.Item>
         <Menu.Item key="7"><Link to="/register"> Register </Link></Menu.Item>
-        <Menu.Item key="8"><Link to="/admin"> Admin </Link></Menu.Item>
+        <Menu.Item key="8"><Link to="/admin/schedule"> Admin </Link></Menu.Item>
 
       </Menu>
       </Header>
