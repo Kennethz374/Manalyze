@@ -11,7 +11,7 @@ import BookingForm from './BookingForm'
 
 
 
-export default function Booking() {
+export default function Booking(props) {
   function collectFormDate(name,phone,date,checkBox){
     console.log(name,phone,date,checkBox)
   
@@ -19,14 +19,12 @@ export default function Booking() {
 
 
     return (
-      <div >
-        {/* <div className='navbar'>
-        </div> */}
-        <div>
-          <Barber />
+      <div className='booking_page'>
+        <div className='barber'>
+          <Barber employee={props.employee} />
        </div>
        <div >
-        <BookingForm getValue={collectFormDate}/>
+        <BookingForm employee={props.employee} getValue={collectFormDate}/>
        </div>
       </div>
     );

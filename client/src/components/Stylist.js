@@ -2,22 +2,22 @@ import React, {useState,useEffect}from "react"
 import axios from 'axios';
 import {Layout, Col, Row, Card} from "antd" 
 import './Stylist.css'
+import { NavLink } from 'react-router-dom'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 const {Content} = Layout
 const {Meta} = Card
 
 
 
-export default function Stylist () {
-  const[employees,setEmployees]=useState([])
 
-  useEffect(()=>{
-    axios.get('http://localhost:3001/api/employees') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      setEmployees(response.data)
+export default function Stylist ({employees}) {
 
-    }) 
-  }, []) 
 
   
 
@@ -35,29 +35,30 @@ export default function Stylist () {
       <h2 className='service_polular' style={{textAlign: "center", color:'#bc9355'}}>
         SERVICE POPULAR
       </h2>
-    <div className='employees'>
-      <Row  gutter={16}>
-        {employees.map(function(employee) {
-          return (
-            <Col span={8}>
-              <Card className='employee'
-                onClick={()=>alert ("123")}
-                
-                hoverable
-                style={{ width: 280,padding:10}}
-                cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
-              >
-                <Meta title={employee.name} description="Lead Hairstylist" />
-              </Card>
-            </Col>
-        )})
-        }
-
-      </Row> 
+      <div className='employees'>
+        <Row  gutter={16}>
+          {employees.map(function(employee) {
+            return (
+              <>
+              <Link to={`/booking/${employee.id}`} >
+              <Col span={8}>
+                <Card className='employee'
+                  // onClick={()=>alert ("123")}
+                  hoverable
+                  style={{ width: 280,padding:10}}
+                  cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
+                >
+                  <Meta title={employee.name} description="Lead Hairstylist" />
+                </Card>
+              </Col>
+              </Link>
+              </>
+            )})
+          } 
+        </Row> 
+      </div>
     </div>
-</div>
-
-</Content>
+  </Content>
 
 
   )
