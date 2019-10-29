@@ -1,5 +1,9 @@
 import React, { Component, useState } from 'react';
 // import axios from 'axios';
+import 'antd/dist/antd.css'
+import "react-datepicker/dist/react-datepicker.css"
+import 'bootstrap/dist/css/bootstrap.css';
+
 import { Layout } from 'antd';
 import Loginpage from './components/Login';
 import Stylist from "./components/Stylist"
@@ -15,10 +19,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Booking from './BookingPage/Booking';
 const { Footer } = Layout;
   
 export default function Homepage (props) {
-
+  
   // const [page, setPage]=useState("Homepage")
   
     return (
@@ -28,6 +33,18 @@ export default function Homepage (props) {
           <Layout className="layout">
           <Navigation/>
           <Stylist/>
+          
+          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+
+          </Footer>
+
+          </Layout>
+        </Route>
+
+        <Route exact path="/booking">
+          <Layout className="layout">
+          <Navigation/>
+          <Booking/>
           
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
 
