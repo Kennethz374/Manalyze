@@ -1,18 +1,19 @@
 import React from "react"
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import Navigation from "../Navigation"
 import Schedule from "./Schedule"
 import SideBar from "./Sidebar"
 import {
-  BrowserRouter as Router,
-  // Switch,
   Route,
-  Link
+  Switch,
+  Redirect
 } from "react-router-dom";
 
 const { Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
+function Statistics(props) {
+  return <div>Statistics</div>
+}
 
 export default class Admin extends React.Component {
 
@@ -22,21 +23,15 @@ export default class Admin extends React.Component {
         <Layout style={{ minHeight: '100vh' }}>
           <SideBar/>
             <Layout>
-              <Navigation/>
-
               <Content style={{ margin: '0 16px' }}>
-                <Schedule/>
+                <Switch>
+                  <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
+                  <Route path="/admin/schedule" component={Schedule} />
+                  <Route path="/admin/statistics" component={Statistics} />
+                </Switch>
               </Content>
-
-              <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-
             </Layout>
         </Layout>
-
-    
-
-     
-
       </>
     );
   }

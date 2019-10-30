@@ -1,7 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
 import { Layout } from 'antd';
-import Loginpage from './components/Login';
+import LoginPage from './components/Login';
 import Stylist from "./components/Stylist"
 import DetailStylists from "./components/DetailStylist"
 import Products from "./components/Products"
@@ -11,7 +11,7 @@ import Admin from "./components/Admin/Index"
 import Navigation from "./components/Navigation"
 import {
   BrowserRouter as Router,
-  // Switch,
+  Switch,
   Route,
   Link
 } from "react-router-dom";
@@ -19,93 +19,41 @@ import Booking from './components/BookingPage/Booking';
 const { Footer } = Layout;
   
 export default function Homepage (props) {
-  
-  // const [page, setPage]=useState("Homepage")
-  
+  const[employees,setEmployees]=useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:3001/api/employees') // You can simply make your requests to "/api/whatever you want"
+    .then((response) => {
+      // handle success
+      setEmployees(response.data)
+
+    }) 
+  }, []) 
+  //add this if statement to make sure employee data get feched, or the components will be rendered without the data directly
+    if(employees.length === 0) return <div>Loading</div>
+
     return (
-      <>
-      <Router>
-        <Route exact path="/">
-          <Layout className="layout">
+      <Layout className="layout">
+        <Router>
           <Navigation/>
-          <Stylist/>
-          
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
+          <Switch>
+          <Route exact path="/" render={() => <Stylist employees={employees}/> } />
+          <Route path="/stylists/:employeeID" render={(props) => (
+              <Booking employee={employees.find(employee => employee.id === Number(props.match.params.employeeID))} />)
+          } />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/hairstylists" component={DetailStylists} />
+          <Route path="/products" component={Products} />
+          <Route path="/services" component={Services} />
+          <Route path="/aboutus" component={About} />
+          <Route path="/admin" component={Admin} />
+          </Switch>
 
-          </Footer>
-
-          </Layout>
-        </Route>
-
-        <Route exact path="/booking">
-          <Layout className="layout">
-          <Navigation/>
-          <Booking/>
-          
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-          </Footer>
-
-          </Layout>
-        </Route>
-
-        <Route exact path="/login">
-          <Layout className="layout">
-            <Navigation/>
-            <Loginpage/>  
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-            </Footer>
-          </Layout>
-        </Route>
-
-        <Route exact path="/hairstylists">
-          <Layout className="layout">
-            <Navigation/>
-            <DetailStylists/>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-            </Footer>
-          </Layout>
-        </Route>
-
-        <Route exact path="/products">
-          <Layout className="layout">
-            <Navigation/>
-            <Products/>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-            </Footer>
-          </Layout>
-        </Route>
-
-        <Route exact path="/services">
-          <Layout className="layout">
-            <Navigation/>
-            <Services/>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-            </Footer>
-          </Layout>
-        </Route>
-
-        <Route exact path="/aboutus">
-          <Layout className="layout">
-            <Navigation/>
-            <About/>
-            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED
-
-            </Footer>
-          </Layout>
-        </Route>
-
-        <Route exact path="/admin/schedule">
-              <Admin/>
-        </Route>
-
-      </Router>
-
-      </>
+        </Router>
+        <Footer style={{ textAlign: 'center' }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
+      </Layout>
 
     
     );
