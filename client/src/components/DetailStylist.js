@@ -1,7 +1,7 @@
 
 import React from "react"
 import { Card } from 'antd';
-import { Layout, Row} from 'antd';
+import { Layout} from 'antd';
 const {Content} = Layout
 
 const gridStyle = {

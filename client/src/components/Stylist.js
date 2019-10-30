@@ -43,7 +43,6 @@ export default function Stylist ({employees}) {
               <Link to={`/booking/${employee.id}`} >
               <Col span={8}>
                 <Card className='employee'
-                  // onClick={()=>alert ("123")}
                   hoverable
                   style={{ width: 280,padding:10}}
                   cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}

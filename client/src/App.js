@@ -20,7 +20,7 @@ const { Footer } = Layout;
   
 export default function Homepage (props) {
   const[employees,setEmployees]=useState([])
-
+  
   useEffect(()=>{
     axios.get('http://localhost:3001/api/employees') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
@@ -46,7 +46,7 @@ export default function Homepage (props) {
           <Route path="/products" component={Products} />
           <Route path="/services" component={Services} />
           <Route path="/aboutus" component={About} />
-          <Route path="/admin" component={Admin} />
+          <Route path="/admin" render={()=> <Admin employees={employees}/>}/>
           </Switch>
 
         </Router>
@@ -59,19 +59,3 @@ export default function Homepage (props) {
     );
 
 }
-
-
-  
-  
-  // const fetchData = () => {
-  //   axios.get('/api/employees') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
-
-  //     // console.log(response.data.message) // Just the message
-  //     // setMessage({
-  //     //   message: response.data.message
-  //     });
-  //   }) 
-  // }

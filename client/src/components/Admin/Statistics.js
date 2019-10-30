@@ -18,57 +18,58 @@ export default class Pie extends React.Component {
     };
 
     return (
-      <div>
-        <Chart
-          width={600}
-          height={window.innerHeight}
-          data={data}
-          scale={cols}
-          padding="auto"
-          forceFit
-          onGetG2Instance={(chart) => {
-            // 饼图绘制多次会导致setSelected处理不生效，延时hack一下fixed
-            setTimeout(() => {
-              // 设置默认选中
-              const geom = chart.get('geoms')[0]; // 获取所有的图形
-              console.log(geom);
-              const items = geom.get('data'); // 获取图形对应的数据
-              console.log(JSON.stringify(items));
-              geom.setSelected(items[1]);
-            }, 2000);
-          }} // 设置选中
-          onPlotClick={(ev) => {
-            console.log(ev);
-          }}
-        >
-          <Coord type="theta" radius={0.65} />
-          <Axis name="percent" />
-          <Legend position="right" offsetY={-window.innerHeight / 2 + 120} offsetX={-100} />
-          <Tooltip
-            showTitle={false}
-            itemTpl='<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
-          />
-          <Geom
-            type="intervalStack"
-            position="percent"
-            color="item"
-            tooltip={[
-              'item*percent',
-              (item, percent) => {
-                percent = `${percent * 100}%`;
-                return {
-                  name: item,
-                  value: percent,
-                };
-              },
-            ]}
-            style={{
-              lineWidth: 1,
-              stroke: '#fff',
-            }}
-          />
-        </Chart>
-      </div>
+      // <div>
+      //   <Chart
+      //     width={600}
+      //     height={window.innerHeight}
+      //     data={data}
+      //     scale={cols}
+      //     padding="auto"
+      //     forceFit
+      //     onGetG2Instance={(chart) => {
+      //       // 饼图绘制多次会导致setSelected处理不生效，延时hack一下fixed
+      //       setTimeout(() => {
+      //         // 设置默认选中
+      //         const geom = chart.get('geoms')[0]; // 获取所有的图形
+      //         console.log(geom);
+      //         const items = geom.get('data'); // 获取图形对应的数据
+      //         console.log(JSON.stringify(items));
+      //         geom.setSelected(items[1]);
+      //       }, 2000);
+      //     }} // 设置选中
+      //     onPlotClick={(ev) => {
+      //       console.log(ev);
+      //     }}
+      //   >
+      //     <Coord type="theta" radius={0.65} />
+      //     <Axis name="percent" />
+      //     <Legend position="right" offsetY={-window.innerHeight / 2 + 120} offsetX={-100} />
+      //     <Tooltip
+      //       showTitle={false}
+      //       itemTpl='<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
+      //     />
+      //     <Geom
+      //       type="intervalStack"
+      //       position="percent"
+      //       color="item"
+      //       tooltip={[
+      //         'item*percent',
+      //         (item, percent) => {
+      //           percent = `${percent * 100}%`;
+      //           return {
+      //             name: item,
+      //             value: percent,
+      //           };
+      //         },
+      //       ]}
+      //       style={{
+      //         lineWidth: 1,
+      //         stroke: '#fff',
+      //       }}
+      //     />
+      //   </Chart>
+      // </div>
+      <h1>123123</h1>
     );
   }
 }
