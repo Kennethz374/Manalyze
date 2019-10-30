@@ -29,12 +29,16 @@ export default class SideBar extends React.Component {
 
             <Menu.Item key="11">
               <Icon type="pie-chart" />
-              <span><Link to="/admin/schedule"> Schedule </Link></span>
+
+              <Link to="/admin/schedule"><span>Schedule</span></Link>
+
             </Menu.Item>
 
             <Menu.Item key="12">
               <Icon type="desktop" />
-              <span><Link to="/admin/statistics"> Statistics </Link></span>
+
+              <Link to="/admin/statistics"><span>Statistics</span></Link>
+
             </Menu.Item>
 
             <Menu.Item key="13">
