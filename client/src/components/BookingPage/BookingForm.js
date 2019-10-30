@@ -5,7 +5,7 @@ import { Checkbox, Row, Col } from 'antd';
 import 'antd/dist/antd.css'
 
 export default function BookingForm(props){
-  console.log(props.getValue)
+  // console.log(props.getValue)
 //form//
   const[userName, setName] = useState('');
   // const[email,setEmail] = useState('')
@@ -26,7 +26,7 @@ function onChange(checkedValues) {
 
   return(
     <Form>
-      <Form.Group controlId="formBasicEmail" style={{ width: 300,marginLeft:800,marginTop:10}}>
+      <Form.Group controlId="formBasicEmail" style={{ width: 300,marginTop:10}}>
         <Form.Label className='booking_text'>User Name</Form.Label>
         <Form.Control type="text" placeholder="user Name" value={userName}
             onChange={(event) => setName(event.target.value)}/>
@@ -43,7 +43,7 @@ function onChange(checkedValues) {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group> */}
 
-      <Form.Group controlId="formBasicPassword" style={{ width: 300,marginLeft:800}}>
+      <Form.Group controlId="formBasicPassword" style={{ width: 300}}>
         <Form.Label className='booking_text'>Phone Number</Form.Label>
         <Form.Control type="text" placeholder="Phone Number" value={phoneNumber}
             onChange={(event) => setPhoneNumber(event.target.value)}/>
@@ -71,19 +71,19 @@ function onChange(checkedValues) {
       <Checkbox.Group style={{ width: '100%'}} onChange={onChange}>
           <Row className='row'>
             <Col span={8}>
-              <Checkbox value="A" style={{ color:'#bc9355'}}>Men's Hair Cut</Checkbox>
+              <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Hair Cut</Checkbox>
             </Col>
             <Col span={8}>
-              <Checkbox value="B" style={{ color:'#bc9355'}}>Women's Hair Cut</Checkbox>
+              <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Hair Cut</Checkbox>
             </Col>
             <Col span={8}>
-              <Checkbox value="C" style={{ color:'#bc9355'}}>Shaving</Checkbox>
+              <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving</Checkbox>
             </Col>
             <Col span={8}>
-              <Checkbox value="D" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
+              <Checkbox value="Perm Hair" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
             </Col>
             <Col span={8}>
-              <Checkbox value="E" style={{ color:'#bc9355'}}>Dyeing hair</Checkbox>
+              <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Dyeing hair</Checkbox>
             </Col>
           </Row>
         </Checkbox.Group>

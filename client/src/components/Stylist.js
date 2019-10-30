@@ -24,8 +24,8 @@ export default function Stylist ({employees}) {
   return (
     <Content style={{ padding: '0 50px' }}>
 
-      <div class="background_img">
-        <div class="centered">I want you to look awesome!</div>
+      <div className="background_img">
+        <div className="centered">I want you to look awesome!</div>
       </div>
 
     <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
@@ -39,11 +39,10 @@ export default function Stylist ({employees}) {
         <Row  gutter={16}>
           {employees.map(function(employee) {
             return (
-              <>
-              <Link to={`/booking/${employee.id}`} >
+              <div key={employee.id}>
+              <Link to={`/stylists/${employee.id}`} >
               <Col span={8}>
-                <Card className='employee'
-                  // onClick={()=>alert ("123")}
+                <Card className='employee' 
                   hoverable
                   style={{ width: 280,padding:10}}
                   cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
@@ -52,7 +51,7 @@ export default function Stylist ({employees}) {
                 </Card>
               </Col>
               </Link>
-              </>
+              </div>
             )})
           } 
         </Row> 
