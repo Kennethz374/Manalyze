@@ -1,6 +1,6 @@
 import React, {useState,useEffect}from "react"
 import axios from 'axios';
-import {Layout, Col, Row, Card} from "antd" 
+import {Layout, Col, Row, Card, Rate} from "antd" 
 import './Stylist.css'
 import { NavLink } from 'react-router-dom'
 
@@ -47,7 +47,13 @@ export default function Stylist ({employees}) {
                   style={{ width: 280,padding:10}}
                   cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
                 >
-                  <Meta title={employee.name} description="Lead Hairstylist" />
+                  <Meta title={employee.name} description={
+                    <>
+                    <span>Lead Hairstylist</span>
+                    <Rate disabled defaultValue={employee.rating} />
+                    </>
+                    } 
+                  />
                 </Card>
               </Col>
               </Link>

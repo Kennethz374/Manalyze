@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, {  useState, useEffect } from 'react';
 import axios from 'axios';
 import { Layout } from 'antd';
 import LoginPage from './components/Login';
@@ -12,8 +12,7 @@ import Navigation from "./components/Navigation"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Booking from './components/BookingPage/Booking';
 const { Footer } = Layout;

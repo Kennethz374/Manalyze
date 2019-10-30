@@ -1,6 +1,6 @@
-import React, {useEffect,useState} from "react"
-import axios from "axios"
-import {Card, Avatar, Col} from 'antd';
+import React from "react"
+// import axios from "axios"
+import {Card, Avatar, Button, Icon} from 'antd';
 
 export default function Clients(props) {
   console.log(props.clients)
@@ -8,11 +8,16 @@ export default function Clients(props) {
       <>
       {props.clients.map((client)=>{
         return (
-          <div style={{ background: '#ECECEC', padding: '10px'}} >
-          <Card span={12} offset={6} bordered={false}>
-            <Avatar size="large" src={client.pictures} />
-          </Card>
-        </div>
+          <div style={{ background: '#ECECEC', padding: '5px', borderRadius:"25px"}} >
+            <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}}>
+              <Avatar size="large" src={client.pictures} />
+              <Icon type="star" />
+              <span>Name: {client.name}  </span>
+              <span>{client.gender&&<span>Gender:Male</span>}</span>
+
+              <Button>Send Promotion</Button>
+            </Card>
+          </div>
 
         )
       })}

@@ -1,10 +1,10 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './Booking.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import DateChoose from './Datepicker'
+// import DateChoose from './Datepicker'
 import "react-datepicker/dist/react-datepicker.css"
-import SelectServices from './SelectServices'
+// import SelectServices from './SelectServices'
 import Barber from './Barber'
 import BookingForm from './BookingForm'
 

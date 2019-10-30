@@ -21,39 +21,49 @@ export default class SideBar extends React.Component {
     return (
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['11']} mode="inline" style={{ color:'#bc9355' }}>
+          <Menu theme="dark" defaultSelectedKeys={['11']} mode="inline">
 
             <Menu.Item key="11">
-              <Icon type="pie-chart" />
-              <span className="nav-text"><Link to="/admin/schedule">Schedule</Link></span>
+              <Icon type="calendar" />
+              <span className="nav-text">Schedule</span>
+              <Link to="/admin/schedule"/>
             </Menu.Item>
 
             <Menu.Item key="12">
-              <Icon type="desktop" />
-              <span className="nav-text"><Link to="/admin/statistics">Statistics</Link></span>
+              <Icon type="line-chart" />
+              <span className="nav-text">Statistics</span>
+              <Link to="/admin/statistics" />
             </Menu.Item>
 
             <Menu.Item key="13">
-              <Icon type="desktop" />
-              <Link to="/admin/employees"> Employees/Stylists </Link>
+              <Icon type="team" />
+              <span className="nav-text">Stylists/Employees</span>
+              <Link to="/admin/employees"/>
             </Menu.Item>
 
             <Menu.Item key="14">
-              <Icon type="desktop" />
-              <Link to="/admin/clients"> Clients </Link>
+              <Icon type="idcard" />
+              <span className="nav-text">Clients</span>
+              <Link to="/admin/clients"/> 
             </Menu.Item>
 
             <SubMenu
               key="sub2"
               title={
                 <span>
-                  <Icon type="team" />
+                  <Icon type="shopping" />
                   Products/Services
                 </span>
               }
             >
-              <Menu.Item key="16">Products</Menu.Item>
-              <Menu.Item key="18">Services</Menu.Item>
+              <Menu.Item key="16">
+                Products
+                <Link to = "/admin/products"/>
+              </Menu.Item>
+              <Menu.Item key="18">
+                Services
+                <Link to = "/admin/services"/>
+              </Menu.Item>
             </SubMenu>
 
           </Menu>
