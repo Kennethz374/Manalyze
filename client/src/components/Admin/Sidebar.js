@@ -26,27 +26,27 @@ export default class SideBar extends React.Component {
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['11']} mode="inline">
+
             <Menu.Item key="11">
               <Icon type="pie-chart" />
+
               <Link to="/admin/schedule"><span>Schedule</span></Link>
+
             </Menu.Item>
+
             <Menu.Item key="12">
               <Icon type="desktop" />
+
               <Link to="/admin/statistics"><span>Statistics</span></Link>
+
             </Menu.Item>
-            <SubMenu
-              key="sub1"
-              title={
-                <span>
-                  <Icon type="user" />
-                  <span>Employees</span>
-                </span>
-              }
-            >
-              <Menu.Item key="13">Tom</Menu.Item>
-              <Menu.Item key="14">Bill</Menu.Item>
-              <Menu.Item key="15">Alex</Menu.Item>
-            </SubMenu>
+
+            <Menu.Item key="13">
+              <Icon type="desktop" />
+              <span><Link to="/admin/employees"> Employees </Link></span>
+            </Menu.Item>
+
+  
             <SubMenu
               key="sub2"
               title={

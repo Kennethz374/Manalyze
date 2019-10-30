@@ -2,6 +2,7 @@ import React from "react"
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Schedule from "./Schedule"
 import SideBar from "./Sidebar"
+import Pie from "./Statistics"
 import {
   Route,
   Switch,
@@ -24,11 +25,14 @@ export default class Admin extends React.Component {
           <SideBar/>
             <Layout>
               <Content style={{ margin: '0 16px' }}>
+
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" component={Schedule} />
                   <Route path="/admin/statistics" component={Statistics} />
                 </Switch>
+
+          
               </Content>
             </Layout>
         </Layout>
