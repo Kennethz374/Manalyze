@@ -1,24 +1,37 @@
-import React from "react"
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import React, {useEffect, useState} from "react"
+import axios from "axios"
+import { Layout } from 'antd';
 import Schedule from "./Schedule"
 import SideBar from "./Sidebar"
-import Pie from "./Statistics"
+import Statistics from "./Statistics/Statistics"
+import Employees from "./Employees"
+import Clients from "./Clients"
+
 import {
   Route,
   Switch,
-  Redirect
+  Redirect,
+  // BrowserRouter as Router
+
 } from "react-router-dom";
 
-const { Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const { Content} = Layout;
 
-function Statistics(props) {
-  return <div>Statistics</div>
-}
+// function Statistics(props) {
+//   return <div>Statistics</div>
+// }
 
-export default class Admin extends React.Component {
+export default function Admin (props){
+  const[clients,setClients]=useState([])
+  useEffect(()=>{
+    axios.get('http://localhost:3001/api/users') // You can simply make your requests to "/api/whatever you want"
+    .then((response) => {
+      // handle success
+      setClients(response.data)
 
-  render() {
+    }) 
+  }, []) 
+  if(clients.length === 0) return <div>Loading</div>
     return (
       <>
         <Layout style={{ minHeight: '100vh' }}>
@@ -30,13 +43,19 @@ export default class Admin extends React.Component {
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" component={Schedule} />
                   <Route path="/admin/statistics" component={Statistics} />
+                  <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
+                  <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
+
+
+
                 </Switch>
 
           
               </Content>
             </Layout>
+
+
         </Layout>
       </>
     );
   }
-}

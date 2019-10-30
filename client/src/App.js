@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, {  useState, useEffect } from 'react';
 import axios from 'axios';
 import { Layout } from 'antd';
 import LoginPage from './components/Login';
@@ -12,15 +12,14 @@ import Navigation from "./components/Navigation"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Booking from './components/BookingPage/Booking';
 const { Footer } = Layout;
   
 export default function Homepage (props) {
   const[employees,setEmployees]=useState([])
-
+  
   useEffect(()=>{
     axios.get('http://localhost:3001/api/employees') // You can simply make your requests to "/api/whatever you want"
     .then((response) => {
@@ -46,7 +45,7 @@ export default function Homepage (props) {
           <Route path="/products" component={Products} />
           <Route path="/services" component={Services} />
           <Route path="/aboutus" component={About} />
-          <Route path="/admin" component={Admin} />
+          <Route path="/admin" render={()=> <Admin employees={employees}/>}/>
           </Switch>
 
         </Router>
@@ -59,19 +58,3 @@ export default function Homepage (props) {
     );
 
 }
-
-
-  
-  
-  // const fetchData = () => {
-  //   axios.get('/api/employees') // You can simply make your requests to "/api/whatever you want"
-  //   .then((response) => {
-  //     // handle success
-  //     console.log(response.data) // The entire response from the Rails API
-
-  //     // console.log(response.data.message) // Just the message
-  //     // setMessage({
-  //     //   message: response.data.message
-  //     });
-  //   }) 
-  // }
