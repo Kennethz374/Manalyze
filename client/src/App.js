@@ -29,7 +29,7 @@ export default function Homepage (props) {
 
     }) 
   }, []) 
-  // const [page, setPage]=useState("Homepage")
+  //add this if statement to make sure employee data get feched, or the components will be rendered without the data directly
     if(employees.length === 0) return <div>Loading</div>
 
     return (
@@ -38,7 +38,7 @@ export default function Homepage (props) {
           <Navigation/>
           <Switch>
           <Route exact path="/" render={() => <Stylist employees={employees}/> } />
-          <Route path="/booking/:employeeID" render={(props) => (
+          <Route path="/stylists/:employeeID" render={(props) => (
               <Booking employee={employees.find(employee => employee.id === Number(props.match.params.employeeID))} />)
           } />
           <Route path="/login" component={LoginPage} />
