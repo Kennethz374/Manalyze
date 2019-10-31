@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Card, Rate } from 'antd';
 
 
 export default function Barber({employee}){
@@ -11,7 +11,9 @@ export default function Barber({employee}){
     style={{width: 300 }}
     cover={<img alt="example" src={employee.picture} />}
   >
-    <Meta title={employee.name} description="www.instagram.com" />
+    <Meta title={employee.title + ": " + employee.name} description={employee.description} />
+    <Rate disabled defaultValue={employee.rating} />
+
   </Card>
   )
 }

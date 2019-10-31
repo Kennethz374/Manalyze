@@ -10,16 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_023613) do
+ActiveRecord::Schema.define(version: 2019_10_31_000540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "employee_id"
+    t.date "date", null: false
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_bookings_on_employee_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.integer "salary"
     t.string "picture"
     t.integer "rating"
+    t.string "phone"
+    t.string "description"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,12 +58,14 @@ ActiveRecord::Schema.define(version: 2019_10_29_023613) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.boolean "gender"
+    t.string "gender"
     t.string "password_digest"
-    t.integer "phoneNumber"
+    t.string "phoneNumber"
     t.string "pictures"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bookings", "employees"
+  add_foreign_key "bookings", "users"
 end

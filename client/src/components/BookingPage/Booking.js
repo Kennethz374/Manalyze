@@ -15,10 +15,7 @@ import { Row, Col } from 'antd'
 export default function Booking(props) {
   function collectFormDate(name,phone,date,checkBox){
     console.log(name,phone,date,checkBox)
-    
-      axios.post('http://localhost:3001/api/bookings', {name,phone,date}) // You can simply make your requests to "/api/whatever you want" 
-    
-  
+    // axios.post("/api/bookings", {name:name})
   }
 
 

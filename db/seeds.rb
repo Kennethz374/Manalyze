@@ -13,14 +13,43 @@ employees = Employee.create([
     name:"Kenneth",
     salary: 10000,
     picture: "https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
-    rating: 5
+    rating: 5,
+    description: "Hi, I am passionate about coding and want to solve problem by creating useful applications",
+    title: "Owner",
+    phone: "778 855 3333"
   },
   {
     name:"Sining",
     salary: 10,
-    picture: "https://images.unsplash.com/photo-1560869631-a8eb0aa68932?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    rating: 5
+    picture: "https://scontent-yyz1-1.cdninstagram.com/vp/d1bed3d9307350d7b783b8f649e653cc/5E383979/t51.2885-15/sh0.08/e35/s640x640/69926372_198128774535221_2316886523191485007_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=105",
+    rating: 4,
+    description: "Hi, let's do it !!! Just do it !!!",
+    title: "Lead Hairstylist",
+    phone: "778 888 8888"
+  },
+
+  {
+    name:"Anthony",
+    salary: 100,
+    picture: "https://images.unsplash.com/photo-1533142215-a17cdfb95243?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    rating: 4,
+    description: "I am smart~ let's do it ~~~~~~",
+    title: "Hairstylist",
+    phone: "778 855 3332"
+
+  },
+
+  {
+    name:"Jenny",
+    salary: 100,
+    picture: "https://images.unsplash.com/photo-1475823678248-624fc6f85785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    rating: 4,
+    description: "I am smart~ let's do it ~~~~~~",
+    title: "Hairstylist",
+    phone: "778855 3334"
+
   }
+
 ])
 
 User.destroy_all
@@ -28,16 +57,16 @@ users = User.create([
   {
     name:"Jeremy",
     email: "Jeremy@jeremy.com",
-    gender: true,
-    phoneNumber: 1,
+    gender: "Male",
+    phoneNumber: "7788888888",
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2JSWU7MW-5a0cee627163-512",
   },
 
   {
     name:"Denis",
     email: "Denis@Denis.com",
-    gender: true,
-    phoneNumber: 23,
+    gender: "Male",
+    phoneNumber: "7788888888",
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
     
   },
@@ -45,9 +74,82 @@ users = User.create([
   {
     name:"Karl",
     email: "Karl@Karl.com",
-    gender: true,
-    phoneNumber: 4,
+    gender: "Male",
+    phoneNumber: "7788888888",
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
-  }
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Andrew",
+    email: "Andrew@Andrew.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UM2EZNKMY-794968593a45-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Nima",
+    email: "Nima@Nima.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U8M3MRRGE-ga3eb6ec7386-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Aaron",
+    email: "Aaron@Aaron.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+  
+  {
+    name:"Denis",
+    email: "Denis@Denis.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
+    password: "dfdfdafsdfasdf"
+  },
+
+  {
+    name:"Karl",
+    email: "Karl@Karl.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Andrew",
+    email: "Andrew@Andrew.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UM2EZNKMY-794968593a45-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Nima",
+    email: "Nima@Nima.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U8M3MRRGE-ga3eb6ec7386-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+  {
+    name:"Aaron",
+    email: "Aaron@Aaron.com",
+    gender: "Male",
+    phoneNumber: "7788888888",
+    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
+    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
 
 ])
