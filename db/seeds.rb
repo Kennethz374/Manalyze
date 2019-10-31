@@ -31,7 +31,6 @@ users = User.create([
     gender: true,
     phoneNumber: 1,
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2JSWU7MW-5a0cee627163-512",
-    password: "adsfasdfadf"
   },
 
   {
@@ -40,7 +39,7 @@ users = User.create([
     gender: true,
     phoneNumber: 23,
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
-    password: "dfdfdafsdfasdf"
+    
   },
 
   {
@@ -49,7 +48,6 @@ users = User.create([
     gender: true,
     phoneNumber: 4,
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
   }
 
 ])
