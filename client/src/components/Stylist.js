@@ -41,7 +41,7 @@ export default function Stylist ({employees}) {
             return (
               <div key={employee.id}>
               <Link to={`/stylists/${employee.id}`} >
-              <Col span={8}>
+              <Col span={6}>
                 <Card className='employee' 
                   hoverable
                   style={{ width: 280,padding:10}}
@@ -49,7 +49,7 @@ export default function Stylist ({employees}) {
                 >
                   <Meta title={employee.name} description={
                     <>
-                    <span>Lead Hairstylist</span>
+                    <div>{employee.title}</div>
                     <Rate disabled defaultValue={employee.rating} />
                     </>
                     } 

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     
     resources :employees
     resources :users
+    resources :bookings
+    resources :products
   end
 
   get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do

@@ -5,7 +5,10 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.integer :salary
       t.string :picture
       t.integer :rating
-
+      t.string :phone
+      t.string :description
+      t.string :title
+      
       t.timestamps
     end
   end
