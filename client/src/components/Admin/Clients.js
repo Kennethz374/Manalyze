@@ -13,7 +13,7 @@ export default function Clients(props) {
               <Avatar size="large" src={client.pictures} />
               <Icon type="star" />
               <span>Name: {client.name}  </span>
-              <span>{client.gender&&<span>Gender:Male</span>}</span>
+              <span>{client.gender}</span>
 
               <Button>Send Promotion</Button>
             </Card>
