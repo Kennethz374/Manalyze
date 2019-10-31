@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/NimaBoscarino/stigma#readme",
   "dependencies": {
+    "bizcharts": "^3.5.5",
     "react-router-dom": "^5.1.2"
   }
 }

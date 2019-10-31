@@ -11,7 +11,7 @@ export default function Barber({employee}){
     style={{width: 300 }}
     cover={<img alt="example" src={employee.picture} />}
   >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
+    <Meta title={employee.name} description="www.instagram.com" />
   </Card>
   )
 }

@@ -20,7 +20,7 @@ class Pie extends React.Component {
     var data = [
       {
         name: "Kenneth",
-        vote: 40
+        vote: 1
       },
       {
         name: "Sining",
