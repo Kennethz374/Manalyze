@@ -41,7 +41,7 @@ export default function Homepage (props) {
               <Booking employee={employees.find(employee => employee.id === Number(props.match.params.employeeID))} />)
           } />
           <Route path="/login" component={LoginPage} />
-          <Route path="/hairstylists" component={DetailStylists} />
+          <Route path="/hairstylists" render={()=> <DetailStylists employees= {employees}/>}/>
           <Route path="/products" component={Products} />
           <Route path="/services" component={Services} />
           <Route path="/aboutus" component={About} />

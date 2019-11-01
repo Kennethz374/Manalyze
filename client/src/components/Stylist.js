@@ -30,10 +30,10 @@ export default function Stylist ({employees}) {
 
     <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
       <h2 className='hairstylists_text' style={{textAlign: "center", color:'#bc9355'}}>
-         K&S Hairstylists
+         K&S Salon
       </h2>
       <h2 className='service_polular' style={{textAlign: "center", color:'#bc9355'}}>
-        SERVICE POPULAR
+        Select A Hairstylist
       </h2>
       <div className='employees'>
         <Row  gutter={16}>

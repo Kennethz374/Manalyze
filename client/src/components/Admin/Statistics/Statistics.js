@@ -6,7 +6,7 @@ import BookingNumber from './bookingNumber'
 
 export default function Statistics() {
   return (
-    <Row type="flex">
+    <Row type="flex" align="bottom">
       
       <Col span={8}>
         <Pie/>

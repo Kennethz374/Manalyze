@@ -11,7 +11,7 @@ export default function DateChoose(){
       onChange={date => setStartDate(date)}
       showTimeSelect
       timeFormat="HH:mm"
-      timeIntervals={15}
+      timeIntervals={30}
       timeCaption="time"
       dateFormat="MMMM d, yyyy h:mm aa"
     />

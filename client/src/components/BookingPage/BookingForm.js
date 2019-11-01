@@ -30,7 +30,7 @@ function onChange(checkedValues) {
         <Form.Label className='booking_text'>User Name</Form.Label>
         <Form.Control type="text" placeholder="user Name" value={userName}
             onChange={(event) => setName(event.target.value)}/>
-    </Form.Group>
+      </Form.Group>
 
       {/* <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -54,14 +54,14 @@ function onChange(checkedValues) {
         <Form.Control type="text" placeholder="Gender" value={gender}
             onChange={(event) => setGender(event.target.value)}/>
       </Form.Group> */}
-      <p className='select_date'>select date</p>
+      <p className='select_date'>Select date</p>
       <div className='date_picker'>
-        <DatePicker
+        <DatePicker 
         selected={startDate}
         onChange={date => setStartDate(date)}
         showTimeSelect
         timeFormat="HH:mm"
-        timeIntervals={15}
+        timeIntervals={30}
         timeCaption="time"
         dateFormat="MMMM d, yyyy h:mm aa"
         />
@@ -70,19 +70,19 @@ function onChange(checkedValues) {
       <div className='check_box'>
       <Checkbox.Group style={{ width: '100%'}} onChange={onChange}>
           <Row className='row'>
-            <Col span={8}>
+            <Col span={10}>
               <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Hair Cut</Checkbox>
             </Col>
-            <Col span={8}>
+            <Col span={10}>
               <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Hair Cut</Checkbox>
             </Col>
-            <Col span={8}>
+            <Col span={10}>
               <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving</Checkbox>
             </Col>
-            <Col span={8}>
+            <Col span={10}>
               <Checkbox value="Perm Hair" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
             </Col>
-            <Col span={8}>
+            <Col span={10}>
               <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Dyeing hair</Checkbox>
             </Col>
           </Row>

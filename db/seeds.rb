@@ -2,7 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-#
+#x
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
@@ -150,6 +150,52 @@ users = User.create([
     phoneNumber: "7788888888",
     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+  },
+
+])
+
+Booking.destroy_all
+users = Booking.create([
+  {
+    user_id: 1,
+    employee_id: 1,
+    date: "Thursday, Oct 31 17:00",
+    notes: "please prepare hot towel for me"
+  },
+
+  {
+    user_id: 2,
+    employee_id: 1,
+    date: "Thursday, Nov 4 16:30",
+    notes: "i might be late a bit"
+  },
+
+  {
+    user_id: 3,
+    employee_id: 1,
+    date: "Thursday, Nov 2 16:30",
+    notes: "I like kenneth so much"
+  },
+
+  {
+    user_id: 4,
+    employee_id: 1,
+    date: "Thursday, Nov 1 16:30",
+    notes: ""
+  },
+
+  {
+    user_id: 5,
+    employee_id: 2,
+    date: "Thursday, Oct 31 16:30",
+    notes: ""
+  },
+
+  {
+    user_id: 6,
+    employee_id: 2,
+    date: "Thursday, Oct 30 16:30",
+    notes: "give me discount"
   },
 
 ])
