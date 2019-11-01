@@ -27,7 +27,15 @@
   },
   "homepage": "https://github.com/NimaBoscarino/stigma#readme",
   "dependencies": {
+    "antd": "^3.24.3",
     "bizcharts": "^3.5.5",
+    "enquire-js": "^0.2.1",
+    "rc-queue-anim": "^1.8.2",
+    "rc-scroll-anim": "^2.6.2",
+    "rc-tween-one": "^2.6.5",
     "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.12.2"
   }
 }

@@ -8,6 +8,7 @@ export default function Clients(props) {
       <>
       {props.clients.map((client)=>{
         return (
+          <div key={client.id}>
           <div style={{ background: '#ECECEC', padding: '5px', borderRadius:"25px"}} >
             <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}}>
               <Avatar size="large" src={client.pictures} />
@@ -17,6 +18,7 @@ export default function Clients(props) {
 
               <Button>Send Promotion</Button>
             </Card>
+          </div>
           </div>
 
         )
