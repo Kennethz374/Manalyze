@@ -15,8 +15,8 @@ import {
   Util
 } from "bizcharts";
 
-class Pie extends React.Component {
-  render() {
+export default function Pie() {
+   
     var data = [
       {
         name: "Kenneth",
@@ -83,6 +83,5 @@ class Pie extends React.Component {
       </div>
     );
   }
-}
 
-export default Pie;
+

@@ -4,6 +4,7 @@ import {Layout, Col, Row, Card, Rate} from "antd"
 import './Stylist.css'
 import { NavLink } from 'react-router-dom'
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +26,9 @@ export default function Stylist ({employees}) {
     <Content style={{ padding: '0 50px' }}>
 
       <div className="background_img">
-        <div className="centered">I want you to look awesome!</div>
+        <div className="centered">
+          I want you to look awesome!
+        </div>
       </div>
 
     <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
@@ -36,7 +39,7 @@ export default function Stylist ({employees}) {
         SERVICE POPULAR
       </h2>
       <div className='employees'>
-        <Row  gutter={16}>
+        <Row  gutter={16} type="flex" justify="center">
           {employees.map(function(employee) {
             return (
               <div key={employee.id}>

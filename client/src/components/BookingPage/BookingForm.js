@@ -1,10 +1,13 @@
 import React,{useState} from 'react';
 import { Form,Button  } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import { Checkbox, Row, Col } from 'antd';
 import 'antd/dist/antd.css'
+import { notification, Icon } from 'antd';
 
 export default function BookingForm(props){
+  const history = useHistory()
   // console.log(props.getValue)
 //form//
   const[userName, setName] = useState('');
@@ -24,6 +27,19 @@ function onChange(checkedValues) {
   // console.log('checked = ', checkedValues);
 }
 
+const openNotification = () => {
+  notification.open({
+    message: 'Booking Complete',
+    icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+  });
+};
+
+const onBook = function(event){ 
+  props.getValue(userName, phoneNumber,date,checkBox);
+  openNotification();
+  history.push('/')
+}
+
   return(
     <Form>
       <Form.Group controlId="formBasicEmail" style={{ width: 300,marginTop:10}}>
@@ -38,10 +54,6 @@ function onChange(checkedValues) {
             onChange={(event) => setEmail(event.target.value)}/>
       </Form.Group> */}
 
-      {/* <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group> */}
 
       <Form.Group controlId="formBasicPassword" style={{ width: 300}}>
         <Form.Label className='booking_text'>Phone Number</Form.Label>
@@ -49,11 +61,7 @@ function onChange(checkedValues) {
             onChange={(event) => setPhoneNumber(event.target.value)}/>
       </Form.Group>
       
-      {/* <Form.Group controlId="formBasicPassword">
-        <Form.Label>Gender</Form.Label>
-        <Form.Control type="text" placeholder="Gender" value={gender}
-            onChange={(event) => setGender(event.target.value)}/>
-      </Form.Group> */}
+
       <p className='select_date'>select date</p>
       <div className='date_picker'>
         <DatePicker
@@ -87,8 +95,8 @@ function onChange(checkedValues) {
             </Col>
           </Row>
         </Checkbox.Group>
-        <Button className='button' variant="warning" onClick={(event) => props.getValue(userName, phoneNumber,date,checkBox)}>Booking</Button>
+        <Button className='button' variant="warning" onClick={onBook}>Booking</Button>
       </div>
-  </Form>
+    </Form>
   )
 }

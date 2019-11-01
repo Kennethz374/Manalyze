@@ -15,18 +15,45 @@ import {
   Util
 } from "bizcharts";
 
-class Gender extends React.Component {
-  render() {
-    const data = [
-      {
-        sex: "男",
-        sold: 0.45
-      },
-      {
-        sex: "女",
-        sold: 0.55
-      }
-    ];
+export default function Gender (props) {
+  console.log(props.gender.clients)
+  const data = [
+    {
+      sex: "Male",
+      sold: 0
+    },
+    {
+      sex: "Female",
+      sold: 0
+    }
+  ];
+
+   let male=0
+   let female=0
+
+for(let element of props.gender.clients){
+  if(element.gender === 'Male'){
+    male += 1
+  }
+  else{
+    female += 1
+  }
+}
+
+let malePrecentage = male/(male+female)
+let femalePercentage = female/(male+female)
+
+for(let element of data){
+  if(element.sex === 'Male'){
+    element.sold=malePrecentage
+  }
+  else{
+    element.sold=femalePercentage
+  }
+}
+
+console.log(malePrecentage)
+    
     Shape.registerShape("interval", "radiusPie", {
       draw(cfg, container) {
         // 将归一化后的数据转换为画布上的坐标
@@ -116,6 +143,5 @@ class Gender extends React.Component {
       </div>
     );
   }
-}
 
-export default Gender;
+

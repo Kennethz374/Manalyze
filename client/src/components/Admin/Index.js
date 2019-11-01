@@ -28,7 +28,6 @@ export default function Admin (props){
     .then((response) => {
       // handle success
       setClients(response.data)
-
     }) 
   }, []) 
   if(clients.length === 0) return <div>Loading</div>
@@ -42,12 +41,9 @@ export default function Admin (props){
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" component={Schedule} />
-                  <Route path="/admin/statistics" component={Statistics} />
+                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients}/>}/>
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
                   <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
-
-
-
                 </Switch>
 
           
