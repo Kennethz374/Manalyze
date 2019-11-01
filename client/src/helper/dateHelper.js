@@ -55,10 +55,37 @@ const booking = [
   }
   ]
 
+  export function numberOfBookingsByMonth (bookings,specificMonth) {
+    let bookingNum = bookings;
+      if (specificMonth < 10) {
+        const result=bookingNum.filter(e=> e.date.includes(`-0${specificMonth}-`))
+        return result.length
+    } 
+    if (specificMonth >=10) {
+        const result=bookingNum.filter(e=> e.date.includes(`-${specificMonth}-`))
+        return result.length
+    }
+  }
+  console.log(numberOfBookingsByMonth(booking,11));
 
-  function numberOfBookingsByMonth (bookings,specificMonth) {
-    
+export function numberOfBookingsByDay (bookings,specificDay,specificMonth) {
+  let bookingNum = bookings;
+    if (specificDay < 10 && specificMonth < 10) {
+      const result=bookingNum.filter(e=> e.date.includes(`-0${specificMonth}-0${specificDay}`))
+      return result.length
+    } 
+    if (specificDay >= 10 && specificMonth < 10) {
+      const result=bookingNum.filter(e=> e.date.includes(`-0${specificMonth}-${specificDay}`))
+      return result.length
+    }
+    if (specificDay < 10 && specificMonth >= 10) {
+      const result=bookingNum.filter(e=> e.date.includes(`-${specificMonth}-0${specificDay}`))
+      return result.length
+    }
+    if (specificDay >= 10 && specificMonth >= 10) {
+      const result=bookingNum.filter(e=> e.date.includes(`-${specificMonth}-${specificDay}`))
+      return result.length
+    }
 
 }
 
-console.log(numberOfBookingsByDay(booking,11))
