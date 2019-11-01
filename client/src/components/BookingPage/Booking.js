@@ -15,25 +15,23 @@ import { Row, Col } from 'antd'
 export default function Booking(props) {
   function collectFormDate(name,phone,date,checkBox){
     console.log(name,phone,date,checkBox)
-    // axios.post("/api/bookings", {name:name})
+    // axios.post("/api/bookings", {name:name,})
   }
 
 
     return (
       <div className='booking_page'>
         <Row type="flex" justify="center" align="top" className='row'>
-        <Col span={6}>
-          <Col >
-        <div className='barber'>
-          <Barber employee={props.employee} />
-       </div>
+          <Col span={8}>
+              <div className='barber'>
+                <Barber employee={props.employee} />
+              </div>
           </Col>
-       </Col>
-       <Col span={6}>
-       <div className='booking_form'>
-        <BookingForm employee={props.employee} getValue={collectFormDate}/>
-       </div>
-       </Col>
+          <Col span={8}>
+            <div className='booking_form'>
+              <BookingForm employee={props.employee} getValue={collectFormDate}/>
+            </div>
+          </Col>
        </Row>
       </div>
     );

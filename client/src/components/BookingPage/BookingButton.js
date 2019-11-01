@@ -4,6 +4,6 @@ import { Button } from 'react-bootstrap';
 
 export default function BookingButton(){
   return(
-    <Button variant="primary">Booking</Button>
+    <Button variant="primary">Book</Button>
   )
 }

@@ -2,19 +2,24 @@ class Api::BookingsController < ApplicationController
   include ActionController::MimeResponds
 
 def create
-  # puts params
-  @booking = Booking.create(
-    name: params[:name]
-
+  @book = Booking.create(
+    user_id: params[:user_id],
+    date: params[:date],
+    employee_id: params[:employee_id]
   ) 
+  # @bookingService=BookingSerivce.create(
+  #   booking_id: @book.id
+  #   service_id: param[:checkbox]
+  # )
 
-  render :json => {
-      message: "hello!"
-    }
+
+    respond_to do |format|
+      format.json{ render :create }
+    end
 end
 
 def index
-  @booking = Booking.all
+  @bookings = Booking.all
 
     respond_to do |format|
       format.json{ render :index }

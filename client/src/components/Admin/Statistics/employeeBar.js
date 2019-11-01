@@ -20,7 +20,7 @@ export default function Pie() {
     var data = [
       {
         name: "Kenneth",
-        vote: 1
+        vote: 10
       },
       {
         name: "Sining",
@@ -36,7 +36,7 @@ export default function Pie() {
       }
     ];
     var imageMap = {
-      Kenneth: "https://zos.alipayobjects.com/rmsportal/mYhpaYHyHhjYcQf.png",
+      Kenneth: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
       Sining: "https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png",
       Patrick: "https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png",
       Mark: "https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png"

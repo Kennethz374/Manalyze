@@ -1,1 +1,1 @@
-json.array! @employees
+json.array! @bookings
