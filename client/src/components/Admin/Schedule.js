@@ -94,13 +94,7 @@ function getListData(value) {
 function dateCellRender(value) {
   const listData = getListData(value);
   return (
-    <ul className="events">
-      {listData.map(item => (
-        <li key={item.content}>
-          <Badge count={item.content} />
-        </li>
-      ))}
-    </ul>
+    <Badge count={listData[0].content} />
   );
 }
 

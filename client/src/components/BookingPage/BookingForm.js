@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Form,Button  } from 'react-bootstrap';
+import { Form,Button,Modal  } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import { Checkbox, Row, Col } from 'antd';
@@ -34,11 +34,56 @@ const openNotification = () => {
   });
 };
 
-const onBook = function(event){ 
-  props.getValue(userName, phoneNumber,date,checkBox);
-  openNotification();
-  history.push('/')
+// const onBook = function(event){ 
+//   props.getValue(userName, phoneNumber,date,checkBox);
+//   // openNotification();
+//   history.push('/')
+// }
+
+function BookingComfirmation() {
+  
+  const [show, setShow] = useState(false);
+
+  const handleSaveBooking = () => {
+    props.getValue(userName, phoneNumber,date,checkBox)
+
+    // console.log(props.getValue)
+    setShow(false)
+    history.push('/')
+    openNotification()
+  };
+  const handleClose = () => setShow(false);
+
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Booking
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Booking Comfirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Comfirm your booking</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSaveBooking}>
+            Save Booking
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
+
+
+
+
+
 
   return(
     <Form>
@@ -91,7 +136,8 @@ const onBook = function(event){
             </Col>
           </Row>
         </Checkbox.Group>
-        <Button className='button' variant="warning" onClick={onBook}>Booking</Button>
+        <BookingComfirmation />
+        {/* <Button className='button' variant="warning" onClick={onBook}>Booking</Button> */}
       </div>
     </Form>
   )
