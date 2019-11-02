@@ -1,6 +1,6 @@
 import React from "react"
 import { Calendar, Badge } from 'antd';
-
+import {numberOfBookingsByDay, numberOfBookingsByMonth} from "../../helper/dateHelper"
 const booking = [
   {
   "id": 1,
@@ -59,56 +59,33 @@ const booking = [
   ]
 
 
-  function numberOfBookingsByDay (bookings,specificDay,specificMonth) {
-    if (specificDay < 10 && specificMonth < 10) {
-      let bookingNum = bookings;
-      const result=bookingNum.filter(e=> e.date.includes(`-0${specificMonth}-0${specificDay}`))
-      return result.length
-    } 
-    if (specificDay >= 10 && specificMonth < 10) {
-      let bookingNum = bookings;
-      const result=bookingNum.filter(e=> e.date.includes(`-0${specificMonth}-${specificDay}`))
-      return result.length
-    }
-    if (specificDay < 10 && specificMonth >= 10) {
-      let bookingNum = bookings;
-      const result=bookingNum.filter(e=> e.date.includes(`-${specificMonth}-0${specificDay}`))
-      return result.length
-    }
-    if (specificDay >= 10 && specificMonth >= 10) {
-      let bookingNum = bookings;
-      const result=bookingNum.filter(e=> e.date.includes(`-${specificMonth}-${specificDay}`))
-      return result.length
-    }
-
-}
-
 function getListData(value) {
   let num = numberOfBookingsByDay(booking,value.date(),value.month()+1) //jan = 0 we have to add 1 to adjust to the correct month
-  console.log(value.date(),value.month())
+  // console.log(value.date(),value.month())
   return [
-    { content: num},
-  ] || [];
+    { content: num}
+  ] || null;
 }
 
 function dateCellRender(value) {
   const listData = getListData(value);
   return (
-    <Badge count={listData[0].content} />
+
+      <Badge count={listData[0].content}/>
+
   );
 }
 
 function getMonthData(value) {
-  if (value.month() === 8) {
-    return 1394;
-  }
+  let num = numberOfBookingsByMonth(booking,value.month()+1)
+  return num
 }
 
 function monthCellRender(value) {
   const num = getMonthData(value);
   return num ? (
     <div className="notes-month">
-      <section>{num}</section>
+      <section><Badge count={num}/></section>
     </div>
   ) : null;
 }
