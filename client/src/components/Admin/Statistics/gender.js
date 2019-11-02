@@ -1,22 +1,22 @@
 import React from "react";
 import {
-  G2,
+  // G2,
   Chart,
   Geom,
-  Axis,
+  // Axis,
   Tooltip,
   Coord,
   Label,
-  Legend,
-  View,
-  Guide,
+  // Legend,
+  // View,
+  // Guide,
   Shape,
-  Facet,
-  Util
+  // Facet,
+  // Util
 } from "bizcharts";
 
 export default function Gender (props) {
-  // console.log(props.gender.clients)
+
   const data = [
     {
       sex: "Male",
@@ -52,7 +52,6 @@ for(let element of data){
   }
 }
 
-// console.log(malePrecentage)
     
     Shape.registerShape("interval", "radiusPie", {
       draw(cfg, container) {

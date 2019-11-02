@@ -3,7 +3,6 @@ import { Card, Rate } from 'antd';
 
 
 export default function Barber({employee}){
-  console.log(employee)
   const { Meta } = Card
   return(
     <Card

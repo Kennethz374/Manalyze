@@ -1,6 +1,6 @@
 import React, {  useState, useEffect } from 'react';
 import axios from 'axios';
-import { Layout } from 'antd';
+import { Layout, Spin } from 'antd';
 import LoginPage from './components/Login';
 import Stylist from "./components/Stylist"
 import DetailStylists from "./components/DetailStylist"
@@ -29,7 +29,7 @@ export default function Homepage (props) {
     }) 
   }, []) 
   //add this if statement to make sure employee data get feched, or the components will be rendered without the data directly
-    if(employees.length === 0) return <div>Loading</div>
+    if(employees.length === 0) return <Spin size="large" />
 
     return (
       <Layout className="layout">
