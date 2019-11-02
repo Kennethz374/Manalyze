@@ -16,7 +16,7 @@ import {
 } from "bizcharts";
 
 export default function Gender (props) {
-  console.log(props.gender.clients)
+  // console.log(props.gender.clients)
   const data = [
     {
       sex: "Male",
@@ -52,7 +52,7 @@ for(let element of data){
   }
 }
 
-console.log(malePrecentage)
+// console.log(malePrecentage)
     
     Shape.registerShape("interval", "radiusPie", {
       draw(cfg, container) {

@@ -70,7 +70,9 @@ function getListData(value) {
 function dateCellRender(value) {
   const listData = getListData(value);
   return (
+
       <Badge count={listData[0].content}/>
+
   );
 }
 

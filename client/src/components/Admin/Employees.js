@@ -3,8 +3,7 @@ import React from "react"
 import {Card, Avatar, Col} from 'antd';
 
 export default function Employees(props) {
-  const employees = props.employees
-
+  const employees = props.employees.employees
   return(
     <>
     { employees.map((employee)=>{
