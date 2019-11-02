@@ -64,3 +64,15 @@ export function BookingsByDay (bookings,specificDay,specificMonth) {
     }
 
 }
+
+export function getServiceNameByServiceId (serviceTable, serviceID) {
+  let data = serviceTable;
+  const result = data.filter((s)=> s.id === serviceID)
+  return result[0].name
+}
+
+export function getServicePriceByServiceId (serviceTable, serviceID) {
+  let data = serviceTable;
+  const result = data.filter((s)=> s.id === serviceID)
+  return result[0].price
+}

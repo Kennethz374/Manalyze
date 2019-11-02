@@ -3,7 +3,6 @@ class CreateServices < ActiveRecord::Migration[5.2]
     create_table :services do |t|
       t.string :name
       t.integer :price
-      t.string :booking_id
 
       t.timestamps
     end

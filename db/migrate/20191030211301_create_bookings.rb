@@ -5,6 +5,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.references :employee, foreign_key: true, index: false
       t.datetime :date, null: false
       t.string :notes
+      t.references :service
 
       t.timestamps
     end

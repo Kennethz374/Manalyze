@@ -1,10 +1,12 @@
 import React from "react"
-import { Calendar, Badge,Popover } from 'antd';
+import { Calendar, Badge,Popover, Tag } from 'antd';
 import {
   numberOfBookingsByDay, 
   numberOfBookingsByMonth, 
   BookingsByDay,getEmployeeNameById, 
-  getUserNameById
+  getUserNameById,
+  getServiceNameByServiceId,
+  getServicePriceByServiceId
 } from "../../helper/dateHelper"
 
 function getListBooking(value, props) {
@@ -33,8 +35,22 @@ function dateCellRender(value, props) {
     let employeeName = getEmployeeNameById(props.employees, b.employee_id)
     let userName = getUserNameById(props.clients, b.user_id)
     let bookingTime = b.date.substring(11,16)
+    let serviceName = getServiceNameByServiceId(props.services,b.service_id)
+    let servicePrice = getServicePriceByServiceId(props.services, b.service_id)
+    const gridStyle = {
+      width: '16.5%',
+      textAlign: 'left',
+      fontSize: 10
+    }
     return (
-      <div>Time: {bookingTime} Client: {userName} Server: {employeeName} Services: null yet notes: {b.notes}`</div>
+      <div>
+        <Tag color="blue">Time: {bookingTime}</Tag>
+        <Tag color="green">Client: {userName}</Tag>
+        <Tag color="black">Server: {employeeName}</Tag>
+        <Tag color="purple">{serviceName}</Tag>
+        <Tag color="pink">Notes: {b.notes}</Tag>
+        <Tag color="geekblue">${servicePrice}</Tag> 
+      </div>
     )
   })
 
