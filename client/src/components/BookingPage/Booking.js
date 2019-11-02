@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
+// import axios from 'axios';
 import './Booking.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // import DateChoose from './Datepicker'
@@ -14,7 +14,6 @@ import { Row, Col } from 'antd'
 
 export default function Booking(props) {
   function collectFormDate(name,phone,date,checkBox){
-    console.log(name,phone,date,checkBox)
     // axios.post("/api/bookings", {name:name,})
   }
 

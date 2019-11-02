@@ -1,14 +1,11 @@
-import React, {useState,useEffect}from "react"
-import axios from 'axios';
+import React from "react"
+// import axios from 'axios';
 import {Layout, Col, Row, Card, Rate} from "antd" 
 import './Stylist.css'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 const {Content} = Layout

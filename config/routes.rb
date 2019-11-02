@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/data', to: 'tests#index'
     
     resources :employees
-    resources :users
+    resources :users 
     resources :bookings
     resources :products
   end

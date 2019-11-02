@@ -6,7 +6,6 @@ const {Content} = Layout
 
 
 export default function DetailStylists (props) {
-  console.log(props.employees)
   return (
     <>
     <Content style={{ padding: '0 50px' }} >
