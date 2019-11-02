@@ -24,11 +24,15 @@ function dateCellRender(value, props) {
 
   const listData = getListData(value, props);
   const dayBooking = getListBooking(value, props)
-
-  let details = dayBooking[0].content.map((b)=>{
+  const sortBookingByTime= dayBooking[0].content.sort(function(a, b) {
+    let dateA = new Date(a.date), dateB = new Date(b.date);
+    return dateA - dateB;
+  });
+  
+  let details = sortBookingByTime.map((b)=>{
     let employeeName = getEmployeeNameById(props.employees, b.employee_id)
     let userName = getUserNameById(props.clients, b.user_id)
-    let bookingTime = b.date.substring(12,16)
+    let bookingTime = b.date.substring(11,16)
     return (
       <div>Time: {bookingTime} Client: {userName} Server: {employeeName} Services: null yet notes: {b.notes}`</div>
     )
@@ -37,7 +41,7 @@ function dateCellRender(value, props) {
   let num =listData[0].content
   return (
     <Popover content={details} title="Booking Details">
-    {num >=2? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
+    {num >=15? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
     </Popover>
   );
 }
@@ -51,7 +55,7 @@ function monthCellRender(value, props) {
   const num = getMonthData(value, props);
   return num ? (
     <div className="notes-month">
-      <section>{num>=2?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
+      <section>{num>=15?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
     </div>  
   ) : null;
 }

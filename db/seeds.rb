@@ -3,6 +3,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
 Employee.destroy_all
 
 employees = Employee.create([
@@ -15,6 +16,7 @@ employees = Employee.create([
     title: "Owner",
     phone: "778 855 3333"
   },
+  
   {
     name:"Sining",
     salary: 10,
@@ -50,160 +52,150 @@ employees = Employee.create([
 ])
 
 User.destroy_all 
-const allUsers = function() {
-  let (i = 0; i < 100; i++) {
-    {
+
+# users =User.create 
+# ([
+#   {
+#     name:"Jeremy",
+#     email: "Jeremy@jeremy.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2JSWU7MW-5a0cee627163-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   },
+
+#   {
+#     name:"Denis",
+#     email: "Denis@Denis.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   },
+
+#   {
+#     name:"Karl",
+#     email: "Karl@Karl.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   },
+
+#   {
+#     name:"Andrew",
+#     email: "Andrew@Andrew.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-UM2EZNKMY-794968593a45-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   },
+
+#   {
+#     name:"Nima",
+#     email: "Nima@Nima.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U8M3MRRGE-ga3eb6ec7386-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   },
+
+#   {
+#     name:"Aaron",
+#     email: "Aaron@Aaron.com",
+#     gender: "Male",
+#     phoneNumber: "7788888888",
+#     pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
+#     password: "dfasdfasdfasdfasdfljliurpqwioeurp"
+#   }
+# ])
+
+
+  # [
+#   {
+#     user_id: 1,
+#     employee_id: 1,
+#     date: "Thursday, Oct 31 17:00",
+#     notes: "please prepare hot towel for me"
+#   },
+
+#   {
+#     user_id: 2,
+#     employee_id: 1,
+#     date: "Thursday, Nov 4 16:30",
+#     notes: "i might be late a bit"
+#   },
+
+#   {
+#     user_id: 3,
+#     employee_id: 1,
+#     date: "Thursday, Nov 2 16:30",
+#     notes: "I like kenneth so much"
+#   },
+
+#   {
+#     user_id: 4,
+#     employee_id: 1,
+#     date: "Thursday, Nov 1 16:30",
+#     notes: ""
+#   },
+
+#   {
+#     user_id: 5,
+#     employee_id: 2,
+#     date: "Thursday, Oct 31 16:30",
+#     notes: ""
+#   },
+
+#   {
+#     user_id: 6,
+#     employee_id: 2,
+#     date: "Thursday, Oct 30 16:30",
+#     notes: "give me discount"
+#   },
+
+# ]
+# )
+
+
+def fakeUsers 
+  @i = 0
+  
+  @fakers = []
+  until @i == 400 do
+    @fakers.push({
       name:Faker::Name.unique.name,
       email: Faker::Internet.unique.email,
-      gender: Faker::Gender.unique.type,
+      gender: Faker::Gender.binary_type,
       phoneNumber: Faker::PhoneNumber.unique.phone_number,
-      pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2JSWU7MW-5a0cee627163-512",
-    }
-  }
-}
-users = User.create([
-  {
-    name:"Jeremy",
-    email: "Jeremy@jeremy.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2JSWU7MW-5a0cee627163-512",
-  },
+      pictures: Faker::Avatar.image,
+      password: Faker::String.random(length: 10)
+    })
+    @i += 1
+  end
 
-  {
-    name:"Denis",
-    email: "Denis@Denis.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
-    
-  },
+  return @fakers
+end  
+users = User.create!(fakeUsers)
 
-  {
-    name:"Karl",
-    email: "Karl@Karl.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
 
-  {
-    name:"Andrew",
-    email: "Andrew@Andrew.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UM2EZNKMY-794968593a45-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
+def fakeBookings
+  @i = 0
+  @fakeBookings = []
+  until @i == 1000 do
+    @fakeBookings.push({
+      user_id: Faker::Number.between(from: 1, to: 400),
+      employee_id: Faker::Number.between(from: 1, to: 4),
+      date: Faker::Time.between(from: DateTime.now -120, to: DateTime.now +120, format: :short),
+      notes: Faker::Quote.robin
+    })
+    @i += 1
+  end
 
-  {
-    name:"Nima",
-    email: "Nima@Nima.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U8M3MRRGE-ga3eb6ec7386-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
+  return @fakeBookings
+end  
 
-  {
-    name:"Aaron",
-    email: "Aaron@Aaron.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
-  
-  {
-    name:"Denis",
-    email: "Denis@Denis.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UHACQE5B9-bc53831fb485-512",
-    password: "dfdfdafsdfasdf"
-  },
 
-  {
-    name:"Karl",
-    email: "Karl@Karl.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UJCML2N1E-eca98b7d4c5a-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
-
-  {
-    name:"Andrew",
-    email: "Andrew@Andrew.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-UM2EZNKMY-794968593a45-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
-
-  {
-    name:"Nima",
-    email: "Nima@Nima.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U8M3MRRGE-ga3eb6ec7386-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
-
-  {
-    name:"Aaron",
-    email: "Aaron@Aaron.com",
-    gender: "Male",
-    phoneNumber: "7788888888",
-    pictures: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
-    password: "dfasdfasdfasdfasdfljliurpqwioeurp"
-  },
-
-])
 
 Booking.destroy_all
-users = Booking.create([
-  {
-    user_id: 1,
-    employee_id: 1,
-    date: "Thursday, Oct 31 17:00",
-    notes: "please prepare hot towel for me"
-  },
-
-  {
-    user_id: 2,
-    employee_id: 1,
-    date: "Thursday, Nov 4 16:30",
-    notes: "i might be late a bit"
-  },
-
-  {
-    user_id: 3,
-    employee_id: 1,
-    date: "Thursday, Nov 2 16:30",
-    notes: "I like kenneth so much"
-  },
-
-  {
-    user_id: 4,
-    employee_id: 1,
-    date: "Thursday, Nov 1 16:30",
-    notes: ""
-  },
-
-  {
-    user_id: 5,
-    employee_id: 2,
-    date: "Thursday, Oct 31 16:30",
-    notes: ""
-  },
-
-  {
-    user_id: 6,
-    employee_id: 2,
-    date: "Thursday, Oct 30 16:30",
-    notes: "give me discount"
-  },
-
-])
+users = Booking.create!(fakeBookings)

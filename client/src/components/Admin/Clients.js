@@ -21,7 +21,7 @@ export default function Clients(props) {
            
            </Card>)
             :
-           (<Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}} onClick={setClientActive}>
+           (<Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px", backgroundColor:"#2b2727", color:'#bc9355'}} onClick={setClientActive}>
               <Avatar size="large" src={client.pictures} />
               <Icon type="star" />
               <span>Name: {client.name}  </span>
