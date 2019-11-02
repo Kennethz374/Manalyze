@@ -1,14 +1,14 @@
 import React from "react"
 // import axios from 'axios';
 
-import Pie from "./employeeBar"
+import EmployeeRating from "./employeeBar"
 import {Row,Col} from "antd"
 import Gender from "./gender"
 import BookingNumber from './bookingNumber'
 import  './statistics.css'
 
 export default function Statistics(props) {
-
+// console.log(props)
   
   return (
     <div className="gutter-example">
@@ -16,7 +16,7 @@ export default function Statistics(props) {
 
       <Col className="gutter-row" span={8}>
         <div className="gutter-box">
-          <Pie/>
+          <EmployeeRating employeesRateing={props.employees}/>
         </div>
       </Col>
 {/*       

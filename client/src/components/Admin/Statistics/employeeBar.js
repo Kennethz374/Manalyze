@@ -15,32 +15,22 @@ import {
   // Util
 } from "bizcharts";
 
-export default function Pie() {
+export default function EmployeeRating(props) {
    
-    var data = [
-      {
-        name: "Kenneth",
-        vote: 10
-      },
-      {
-        name: "Sining",
-        vote: 1
-      },
-      {
-        name: "Patrick",
-        vote: 3
-      },
-      {
-        name: "Mark",
-        vote: 3
-      }
-    ];
-    var imageMap = {
-      Kenneth: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
-      Sining: "https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png",
-      Patrick: "https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png",
-      Mark: "https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png"
-    };
+    var data = [];
+
+    for(let element of props.employeesRateing.employees){
+      data.push({name:element.name, vote:element.rating})
+    }
+
+    var imageMap = {}; 
+    for(let element of props.employeesRateing.employees){
+      imageMap[element.name]=element.picture
+    }
+
+
+
+
     const scale = {
       vote: {
         min: 0
@@ -83,5 +73,4 @@ export default function Pie() {
       </div>
     );
   }
-
 

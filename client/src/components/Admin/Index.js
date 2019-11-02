@@ -22,8 +22,10 @@ const { Content} = Layout;
 // }
 
 export default function Admin (props){
+  // console.log(props)
   const[clients,setClients]=useState([])
   const[bookings,setBookings]=useState([])
+
 
   useEffect(()=>{
     axios.get('http://localhost:3001/api/users') // You can simply make your requests to "/api/whatever you want"
@@ -51,9 +53,10 @@ export default function Admin (props){
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" render={()=> <Schedule clients={clients} employees={props.employees} bookings={bookings}/>} />
-                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients}/>}/>
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
+                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} employees={props}/>}/>
                   <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
+
                 </Switch>
 
           

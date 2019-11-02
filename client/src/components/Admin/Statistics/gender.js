@@ -16,6 +16,7 @@ import {
 } from "bizcharts";
 
 export default function Gender (props) {
+
   const data = [
     {
       sex: "Male",

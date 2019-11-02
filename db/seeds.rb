@@ -61,6 +61,7 @@ const allUsers = function() {
     }
   }
 }
+
 users = User.create([
   {
     name:"Jeremy",
@@ -161,7 +162,17 @@ users = User.create([
   },
 
 ])
-
+# bookings = []
+# for(i < 100) {
+#   bookings.push({
+#     "user_id": 2,
+#     "employee_id": 1,
+#     "date": "2019-11-04T16:30:00.000Z",
+#     "notes": "i might be late a bit",
+#     "created_at": "2019-10-31T20:39:11.631Z",
+#     "updated_at": "2019-10-31T20:39:11.631Z"
+#     })
+# }
 Booking.destroy_all
 users = Booking.create([
   {
