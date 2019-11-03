@@ -1,16 +1,15 @@
 import React from "react"
 import {Tabs} from "antd"
-import BookingNumber from "./bookingNumber"
+import TotalBookings from "./TotalBookings"
 const {TabPane} = Tabs
 
-export default function ChartTab () {
+export default function ChartTab (props) {
   return (
   <Tabs defaultActiveKey="1" >
-  <TabPane tab="Tab 1" key="1">
-    <BookingNumber/>
+  <TabPane tab="Number Of Bookings" key="1">
+    <TotalBookings bookings={props.bookings}/>
   </TabPane>
   <TabPane tab="Tab 2" key="2">
-    <BookingNumber/>
   </TabPane>
 
   </Tabs>

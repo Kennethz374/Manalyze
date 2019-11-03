@@ -92,3 +92,40 @@ export function getTotalIncomeOfAllBookings(bookings,serviceTable) {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   return totalIncome.reduce(reducer)
 }
+
+export function totalDays(bookingData) {
+  let uniqueDate = [];
+  for (let i = 0; i < bookingData.length -1; i++) {
+    if(!uniqueDate.includes(bookingData[i].date.substring(5,10))){
+      uniqueDate.push(bookingData[i].date.substring(5,10))
+    }
+  }
+  return uniqueDate.length
+}
+///for total bookings bar chart
+function getNumberOfBookingsByDate(bookings, date) {
+  const result = bookings.filter((b)=> b.date.substring(5,10)=== date)
+  return result.length
+}
+
+export function bookingInfoWithOnlyDateAndBookings(bookingData) {
+  let uniqueDate = [];
+  let Data = [];
+  for (let i = 0; i < bookingData.length -1; i++) {
+    if(!uniqueDate.includes(bookingData[i].date.substring(5,10))){
+      uniqueDate.push(bookingData[i].date.substring(5,10))
+    }
+  }
+  const sortedUniqueDate= uniqueDate.sort()
+  const sortedNumOfBookings=sortedUniqueDate.map((d)=> getNumberOfBookingsByDate(bookingData,d))
+  
+  for (let j = 0; j < sortedUniqueDate.length; j++) {
+    Data.push(
+      {
+        date: sortedUniqueDate[j],
+        bookings: sortedNumOfBookings[j]
+      }
+    )
+  }
+  return Data;
+}

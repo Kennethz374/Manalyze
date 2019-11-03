@@ -44,7 +44,7 @@ export default function Statistics(props) {
      </Row>
 
      <Row>
-      <ChartTab/>
+      <ChartTab bookings={props.bookings}/>
      </Row>
 
      <Row>
