@@ -76,3 +76,19 @@ export function getServicePriceByServiceId (serviceTable, serviceID) {
   const result = data.filter((s)=> s.id === serviceID)
   return result[0].price
 }
+
+export function getTodayTotalIncome (bookings, servicetable, date) {
+  let listOfBookings = bookings;
+  const listOfOneDayBookings=listOfBookings.filter((b)=>b.date.substring(5,10) === date)
+  const totalIncomeList = listOfOneDayBookings.map((b)=> b.service_id)
+  const totalPrice= totalIncomeList.map((id)=>getServicePriceByServiceId(servicetable,id))
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return totalPrice.reduce(reducer)
+}
+
+export function getTotalIncomeOfAllBookings(bookings,serviceTable) {
+  const totalListOfService=bookings.map((b)=>b.service_id)
+  const totalIncome=totalListOfService.map((id)=>getServicePriceByServiceId(serviceTable,id))
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return totalIncome.reduce(reducer)
+}

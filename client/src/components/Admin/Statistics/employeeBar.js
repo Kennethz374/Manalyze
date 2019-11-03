@@ -49,7 +49,7 @@ export default function Pie() {
     return (
       <div>
         <Chart
-          height={400}
+          height={200}
           data={data}
           padding={[60, 20, 40, 60]}
           scale={scale}

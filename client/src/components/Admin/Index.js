@@ -60,7 +60,7 @@ export default function Admin (props){
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" render={()=> <Schedule clients={clients} employees={props.employees} bookings={bookings} services={services}/>} />
-                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients}/>}/>
+                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} bookings={bookings} services={services}/>}/>
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
                   <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
                 </Switch>

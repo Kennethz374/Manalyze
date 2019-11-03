@@ -37,11 +37,7 @@ function dateCellRender(value, props) {
     let bookingTime = b.date.substring(11,16)
     let serviceName = getServiceNameByServiceId(props.services,b.service_id)
     let servicePrice = getServicePriceByServiceId(props.services, b.service_id)
-    const gridStyle = {
-      width: '16.5%',
-      textAlign: 'left',
-      fontSize: 10
-    }
+
     return (
       <div>
         <Tag color="blue">Time: {bookingTime}</Tag>

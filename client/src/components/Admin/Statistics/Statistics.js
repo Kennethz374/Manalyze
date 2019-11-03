@@ -4,46 +4,51 @@ import React from "react"
 import Pie from "./employeeBar"
 import {Row,Col} from "antd"
 import Gender from "./gender"
-import BookingNumber from './bookingNumber'
 import  './statistics.css'
+import ChartTab from "./ChartTab"
+import TotalSales from "./totalSales"
 
 export default function Statistics(props) {
-
   
   return (
     <div className="gutter-example">
-    <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+    <Row gutter={[10, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
 
-      <Col className="gutter-row" span={8}>
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
-          <Pie/>
+          <TotalSales bookings={props.bookings} services={props.services}/>
         </div>
       </Col>
-{/*       
-      <Col span={8}>
-        <Pie/>
-      </Col> */}
 
-      <Col className="gutter-row" span={8}>
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
           <Gender gender={props}/>
         </div>
       </Col>
 
-      {/* <Col span={8}>
-        <Gender gender={props}/>
-      </Col> */}
-
-
-      <Col className="gutter-row" span={8}>
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
-          <BookingNumber/>
+          <Gender gender={props}/>
         </div>
       </Col>
 
-      {/* <Col span={8}>
-        <BookingNumber/>
-      </Col> */}
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
+        <div className="gutter-box">
+          <Gender gender={props}/>
+        </div>
+      </Col>
+     </Row>
+
+     <Row>
+
+     </Row>
+
+     <Row>
+      <ChartTab/>
+     </Row>
+
+     <Row>
+
      </Row>
     </div>
   
