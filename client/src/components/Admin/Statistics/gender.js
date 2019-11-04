@@ -55,7 +55,6 @@ for(let element of data){
     
     Shape.registerShape("interval", "radiusPie", {
       draw(cfg, container) {
-        // 将归一化后的数据转换为画布上的坐标
         const points = cfg.origin.points;
         let path = [];
 
@@ -106,12 +105,9 @@ for(let element of data){
     return (
       <div>
         <Chart
-          height={400}
+          height={200}
           data={data}
           padding={[20, 30, 30, 20]}
-          plotBackground={{
-            stroke: "#eee"
-          }}
           forceFit
         >
           <Coord type="theta" radius={0.8} />
@@ -126,7 +122,7 @@ for(let element of data){
               content="sold"
               custom={true}
               htmlTemplate={(text, item) => {
-                const isFemale = item.point.sex === "女";
+                const isFemale = item.point.sex === "Female";
                 const src = isFemale
                   ? "https://gw.alipayobjects.com/zos/rmsportal/mweUsJpBWucJRixSfWVP.png"
                   : "https://gw.alipayobjects.com/zos/rmsportal/oeCxrAewtedMBYOETCln.png";

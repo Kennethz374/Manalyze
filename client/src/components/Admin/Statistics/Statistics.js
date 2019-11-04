@@ -1,49 +1,67 @@
 import React from "react"
 // import axios from 'axios';
 
-import EmployeeRating from "./employeeBar"
-import {Row,Col} from "antd"
+import EmployeeBar from "./employeeBar"
+import {Row,Col,Tag} from "antd"
 import Gender from "./gender"
-import BookingNumber from './bookingNumber'
 import  './statistics.css'
+import ChartTab from "./ChartTab"
+import TotalSales from "./totalSales"
+import ServicePie from "./ServicePie"
+import ServiceRevenuePie from "./ServiceRevenuePie"
 
 export default function Statistics(props) {
-// console.log(props)
-  
   return (
     <div className="gutter-example">
-    <Row gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, 20]}>
+      <h4 >Welcome Back! Here is {props.currentDate}'s report for you</h4>
+    <Row gutter={[10, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
 
-      <Col className="gutter-row" span={8}>
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
-          <EmployeeRating employeesRateing={props.employees}/>
+          <TotalSales bookings={props.bookings} services={props.services} currentDate={props.currentDate}/>
+
         </div>
       </Col>
-{/*       
-      <Col span={8}>
-        <Pie/>
-      </Col> */}
 
-      <Col className="gutter-row" span={8}>
+      <Col className="gutter-row" xs={24} md={12} >
+        <div className="gutter-box">
+          <EmployeeBar bookings={props.bookings} services={props.services} clients={props.clients} employees={props.employees}/>
+        </div>
+      </Col>
+
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
           <Gender gender={props}/>
         </div>
       </Col>
-
-      {/* <Col span={8}>
-        <Gender gender={props}/>
+{/* 
+      <Col className="gutter-row" xs={24} md={12} xl={6} >
+        <div className="gutter-box">
+          <ServicePie bookings={props.bookings} services={props.services}/>
+        </div>
       </Col> */}
 
+     </Row>
+     <Row></Row>
 
-      <Col className="gutter-row" span={8}>
+     <Row>
+      <div className="gutter-box">
+      <ChartTab bookings={props.bookings} services={props.services} currentDate={props.currentDate}/>
+      </div>
+     </Row>
+
+     <Row>
+     <Col className="gutter-row" xs={24} md={12}>
         <div className="gutter-box">
-          <BookingNumber/>
+        <ServicePie bookings={props.bookings} services={props.services}/> 
+        </div>
+      </Col>      
+      <Col className="gutter-row" xs={24} md={12}>
+        <div className="gutter-box">
+        <ServiceRevenuePie bookings={props.bookings} services={props.services}/> 
         </div>
       </Col>
-
-      {/* <Col span={8}>
-        <BookingNumber/>
-      </Col> */}
+      
      </Row>
     </div>
   

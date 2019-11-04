@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2019_11_03_000159) do
     t.bigint "employee_id"
     t.datetime "date", null: false
     t.string "notes"
+    t.bigint "service_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_bookings_on_service_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -49,7 +51,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_000159) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.integer "price"
-    t.string "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

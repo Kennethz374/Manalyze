@@ -1,10 +1,12 @@
 import React from "react"
-import { Calendar, Badge,Popover } from 'antd';
+import { Calendar, Badge,Popover, Tag } from 'antd';
 import {
   numberOfBookingsByDay, 
   numberOfBookingsByMonth, 
   BookingsByDay,getEmployeeNameById, 
-  getUserNameById
+  getUserNameById,
+  getServiceNameByServiceId,
+  getServicePriceByServiceId
 } from "../../helper/dateHelper"
 
 function getListBooking(value, props) {
@@ -24,20 +26,34 @@ function dateCellRender(value, props) {
 
   const listData = getListData(value, props);
   const dayBooking = getListBooking(value, props)
-
-  let details = dayBooking[0].content.map((b)=>{
+  const sortBookingByTime= dayBooking[0].content.sort(function(a, b) {
+    let dateA = new Date(a.date), dateB = new Date(b.date);
+    return dateA - dateB;
+  });
+  
+  let details = sortBookingByTime.map((b)=>{
     let employeeName = getEmployeeNameById(props.employees, b.employee_id)
     let userName = getUserNameById(props.clients, b.user_id)
-    let bookingTime = b.date.substring(12,16)
+    let bookingTime = b.date.substring(11,16)
+    let serviceName = getServiceNameByServiceId(props.services,b.service_id)
+    let servicePrice = getServicePriceByServiceId(props.services, b.service_id)
+
     return (
-      <div>Time: {bookingTime} Client: {userName} Server: {employeeName} Services: null yet notes: {b.notes}`</div>
+      <div>
+        <Tag color="blue">Time: {bookingTime}</Tag>
+        <Tag color="green">Client: {userName}</Tag>
+        <Tag color="black">Server: {employeeName}</Tag>
+        <Tag color="purple">{serviceName}</Tag>
+        <Tag color="pink">Notes: {b.notes}</Tag>
+        <Tag color="geekblue">${servicePrice}</Tag> 
+      </div>
     )
   })
 
   let num =listData[0].content
   return (
     <Popover content={details} title="Booking Details">
-    {num >=2? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
+    {num >=15? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
     </Popover>
 
   );
@@ -52,7 +68,7 @@ function monthCellRender(value, props) {
   const num = getMonthData(value, props);
   return num ? (
     <div className="notes-month">
-      <section>{num>=2?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
+      <section>{num>=15?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
     </div>  
   ) : null;
 }
