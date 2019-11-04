@@ -8,7 +8,11 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 })
 export default function TotalSales(props) {
-  let date = new Date().toJSON().substring(5,10)
+  // const [CurrentDate, setCurrentDate] = useState([])
+  // setCurrentDate(new Date().toJSON().substring(5,10))
+
+  console.log(props.currentDate)
+  let date = props.currentDate
   let totalIncomeToday = getTodayTotalIncome(props.bookings, props.services, date)
   let totalIncome =getTotalIncomeOfAllBookings(props.bookings,props.services)
   let totalIncomeThisYear=formatter.format(totalIncome)

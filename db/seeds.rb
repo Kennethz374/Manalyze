@@ -16,7 +16,7 @@ services = Service.create([
   },
 
   {
-    name: "Shave and Facial massage",
+    name: "Shave and Facial",
     price: 25
   },
 

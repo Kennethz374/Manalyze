@@ -107,9 +107,6 @@ for(let element of data){
           height={200}
           data={data}
           padding={[20, 30, 30, 20]}
-          plotBackground={{
-            stroke: "#eee"
-          }}
           forceFit
         >
           <Coord type="theta" radius={0.8} />

@@ -22,16 +22,19 @@ const { Content} = Layout;
 // }
 
 export default function Admin (props){
+  let date = new Date();
+  let dateNow = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toJSON();  //get current Date
   const[clients,setClients]=useState([])
   const[bookings,setBookings]=useState([])
   const[services,setServices]=useState([])
-
+  const[currentDate, setCurrentDate]=useState([])
 
   useEffect(()=>{
     axios.get('http://localhost:3001/api/users') 
     .then((response) => {
       // handle success
       setClients(response.data)
+      setCurrentDate(dateNow.substring(5,10))
     }) 
   }, []) 
   useEffect(()=>{
@@ -49,7 +52,7 @@ export default function Admin (props){
     }) 
   }, []) 
 
-  if(clients.length === 0||bookings.length===0||services.length===0) return <Spin size="large" />
+  if(clients.length === 0||bookings.length===0||services.length===0||currentDate.length===0) return <Spin size="large" />
     return (
       <>
         <Layout style={{ minHeight: '100vh' }}>
@@ -60,7 +63,7 @@ export default function Admin (props){
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
                   <Route path="/admin/schedule" render={()=> <Schedule clients={clients} employees={props.employees} bookings={bookings} services={services}/>} />
-                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} bookings={bookings} services={services}/>}/>
+                  <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} bookings={bookings} services={services} employees={props.employees} currentDate={currentDate}/>}/>
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
                   <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
                 </Switch>

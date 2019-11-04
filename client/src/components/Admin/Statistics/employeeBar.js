@@ -14,35 +14,19 @@ import {
   // Facet,
   // Util
 } from "bizcharts";
+import {getEmployeesNameAndBookings} from "../../../helper/dateHelper"
 
-export default function Pie() {
-   
-    var data = [
-      {
-        name: "Kenneth",
-        vote: 10
-      },
-      {
-        name: "Sining",
-        vote: 1
-      },
-      {
-        name: "Patrick",
-        vote: 3
-      },
-      {
-        name: "Mark",
-        vote: 3
-      }
-    ];
+export default function EmployeeBar(props) {
+  var data = getEmployeesNameAndBookings(props.bookings, props.employees)
+  console.log(data);
     var imageMap = {
-      Kenneth: "https://ca.slack-edge.com/T2G8TE2E5-U2J4W64JE-g91b09e8013e-512",
-      Sining: "https://zos.alipayobjects.com/rmsportal/JBxkqlzhrlkGlLW.png",
-      Patrick: "https://zos.alipayobjects.com/rmsportal/zlkGnEMgOawcyeX.png",
-      Mark: "https://zos.alipayobjects.com/rmsportal/KzCdIdkwsXdtWkg.png"
+      Kenneth:"https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60",
+      Sining: "https://scontent-yyz1-1.cdninstagram.com/vp/d1bed3d9307350d7b783b8f649e653cc/5E383979/t51.2885-15/sh0.08/e35/s640x640/69926372_198128774535221_2316886523191485007_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=105",
+      Anthony: "https://images.unsplash.com/photo-1533142215-a17cdfb95243?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      Jenny: "https://images.unsplash.com/photo-1475823678248-624fc6f85785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     };
     const scale = {
-      vote: {
+      bookings: {
         min: 0
       }
     };
@@ -56,22 +40,22 @@ export default function Pie() {
           forceFit
         >
           <Axis
-            name="vote"
+            name="bookings"
             labels={null}
-            title={null}
+            title={true}
             line={null}
             tickLine={null}
           />
           <Geom
             type="interval"
-            position="name*vote"
+            position="name*bookings"
             color={["name", ["#7f8da9", "#fec514", "#db4c3c", "#daf0fd"]]}
           />
           <Tooltip />
           <Geom
             type="point"
-            position="name*vote"
-            size={60}
+            position="name*bookings"
+            size={40}
             shape={[
               "name",
               function(name) {
