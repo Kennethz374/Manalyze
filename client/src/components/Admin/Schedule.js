@@ -55,6 +55,7 @@ function dateCellRender(value, props) {
     <Popover content={details} title="Booking Details">
     {num >=15? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
     </Popover>
+
   );
 }
 
