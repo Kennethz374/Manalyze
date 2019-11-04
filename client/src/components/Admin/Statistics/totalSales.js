@@ -8,8 +8,6 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 })
 export default function TotalSales(props) {
-  // const [CurrentDate, setCurrentDate] = useState([])
-  // setCurrentDate(new Date().toJSON().substring(5,10))
 
   console.log(props.currentDate)
   let date = props.currentDate
@@ -29,8 +27,8 @@ export default function TotalSales(props) {
         </>
         }  
       style={{ height: 200 }} xs={24} md={12} xl={6}>
-          <p>Avg Daily income: {AvgDailyIncome}</p>
-          <p>Today's Income: {totalIncomeThisDay} </p>
+          <h6>Avg Daily income: {AvgDailyIncome}</h6>
+          <h6>Today's Income: {totalIncomeThisDay} </h6>
      
         </Card>
       </div>

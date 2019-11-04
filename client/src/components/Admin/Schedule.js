@@ -53,7 +53,7 @@ function dateCellRender(value, props) {
   let num =listData[0].content
   return (
     <Popover content={details} title="Booking Details">
-    {num >=15? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
+    {num >=10? <Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }}/>}
     </Popover>
 
   );
@@ -68,7 +68,7 @@ function monthCellRender(value, props) {
   const num = getMonthData(value, props);
   return num ? (
     <div className="notes-month">
-      <section>{num>=15?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
+      <section>{num>=80?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
     </div>  
   ) : null;
 }
