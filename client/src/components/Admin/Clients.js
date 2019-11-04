@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 // import axios from "axios"
-import {Card, Avatar, Button, Icon} from 'antd';
+import {Card, Avatar, Button, Icon, Row, Col} from 'antd';
 
 export default function Clients(props) {
   const [activeClient, setActiveClient] = useState(null);
@@ -12,22 +12,38 @@ export default function Clients(props) {
           <div key={client.id}>
           <div style={{ background: '#ECECEC', padding: '5px', borderRadius:"25px"}} >
             { client.id === activeClient ?
-           ( <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}} onClick={()=>setActiveClient(null)}>
-              <Icon type="star" />
-              <span>Name: {client.name}  </span>
-              <span>Gender: {client.gender}</span>
+           ( 
+            <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}} onClick={()=>setActiveClient(null)}>
+                <Icon type="star" />
+                <span>Name: {client.name}  </span>
+                <span>Gender: {client.gender}</span>
 
-              <Button>Send Promotion</Button>
-           
-           </Card>)
+                <Button>Send Promotion</Button>
+            
+            </Card>
+           )
             :
-           (<Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px", backgroundColor:"#2b2727", color:'#bc9355'}} onClick={setClientActive}>
-              <Avatar size="large" src={client.pictures} />
-              <Icon type="star" />
-              <span>Name: {client.name}  </span>
-              <span>Gender: {client.gender}</span>
+           (
+            <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px", backgroundColor:"#2b2727", color:'#bc9355'}} onClick={setClientActive}>
+                <Row>
+                  <Col span={4}>
+                    <Avatar size="large" src={client.pictures} />
+                  </Col>
 
-            </Card>)
+                {/* <Icon type="star" /> */}
+                  <Col span={10}>
+                    <div>Name: {client.name}  </div>
+                    <div>Email: {client.email}  </div>
+
+                  </Col>
+
+                  <Col span={10}>
+                    <div>Phone#: {client.phoneNumber}</div>
+                    <div>Gender: {client.gender}</div>
+                  </Col>
+                </Row>
+              </Card>
+            )
             }
           </div>
           </div>

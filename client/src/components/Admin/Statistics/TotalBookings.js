@@ -10,7 +10,7 @@ import {bookingInfoWithOnlyDateAndBookings} from "../../../helper/dateHelper"
 
 
 export default function TotalBookings(props) {
-  const data = bookingInfoWithOnlyDateAndBookings(props.bookings);
+  const data = bookingInfoWithOnlyDateAndBookings(props.bookings,props.currentDate);
 
   const cols = {
     bookings: {

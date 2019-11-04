@@ -46,7 +46,7 @@ export default function Statistics(props) {
 
      <Row>
       <div className="gutter-box">
-      <ChartTab bookings={props.bookings} services={props.services}/>
+      <ChartTab bookings={props.bookings} services={props.services} currentDate={props.currentDate}/>
       </div>
      </Row>
 
