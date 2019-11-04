@@ -120,10 +120,10 @@ function BookingComfirmation() {
       <Checkbox.Group style={{ width: '100%'}} onChange={onChange}>
           <Row className='row'>
             <Col span={10}>
-              <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Hair Cut</Checkbox>
+              <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Haircut</Checkbox>
             </Col>
             <Col span={10}>
-              <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Hair Cut</Checkbox>
+              <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Haircut</Checkbox>
             </Col>
             <Col span={10}>
               <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving</Checkbox>
@@ -132,7 +132,7 @@ function BookingComfirmation() {
               <Checkbox value="Perm Hair" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
             </Col>
             <Col span={10}>
-              <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Dyeing hair</Checkbox>
+              <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Colours</Checkbox>
             </Col>
           </Row>
         </Checkbox.Group>

@@ -17,46 +17,17 @@
   width: 100vw;
   height: 100vh;
   background-color:#1f2125;
-  
-  /* position: fixed;
-  top: 0; */
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: large
  }
- .barber{
-  /* border-width: 2px 10px 4px 20px;; */
-  /* margin-top: 90px; */
-  /* margin-left: 60%; */
-  /* width: 30vw;
-  height: 30vh; */
-  /* display: flex;
-  align-items: center; */
-  /* padding-left: 50px; */
- }
- /* .date_picker{
-  background-color:red;
-  width: 30vw;
-  height:30vh;
-  padding-left: 20px;
- } */
- .check_box{
-  /* margin-left: 780px;
-  margin-top:30px;
-  width: 30vw;
-  height:30vh;
-  padding-left: 20px; */
- }
+
 .info{
   padding-left: 20px;
   padding-top:0px;
   margin-top:0px
 }
-.booking_form{
- /* float: right;
- margin-top: 90px; */
-}
-.date_picker{
-  /* margin-left: 800px; */
-  
-}
+
 .booking_text{
   color: #bc9355;
 }
