@@ -25,6 +25,7 @@ export default function EmployeeBar(props) {
       Anthony: "https://images.unsplash.com/photo-1533142215-a17cdfb95243?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       Jenny: "https://images.unsplash.com/photo-1475823678248-624fc6f85785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     };
+
     const scale = {
       bookings: {
         min: 0
@@ -67,5 +68,4 @@ export default function EmployeeBar(props) {
       </div>
     );
   }
-
 

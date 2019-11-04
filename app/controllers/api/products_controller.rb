@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
   include ActionController::MimeResponds
 
   def index
-    @product = Product.all
+    @products = Product.all
 
     respond_to do |format|
       format.json{ render :index }

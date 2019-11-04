@@ -24,16 +24,16 @@ export default function Stylist ({employees}) {
 
       <div className="background_img">
         <div className="centered">
-          I want you to look awesome!
+        <p>I want you to look awesome</p>
         </div>
       </div>
 
     <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
       <h2 className='hairstylists_text' style={{textAlign: "center", color:'#bc9355'}}>
-         K&S Salon
+      SINNETH & HIS FRIENDS SALON
       </h2>
       <h2 className='service_polular' style={{textAlign: "center", color:'#bc9355'}}>
-        Select A Hairstylist
+        You Deserve Nothing But The Best
       </h2>
       <div className='employees'>
         <Row  gutter={16} type="flex" justify="center">
@@ -44,7 +44,7 @@ export default function Stylist ({employees}) {
               <Col span={6}>
                 <Card className='employee' 
                   hoverable
-                  style={{ width: 280,padding:10}}
+                  style={{ width: 280,padding:10,borderRadius:"15px"}}
                   cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
                 >
                   <Meta title={employee.name} description={
@@ -64,8 +64,6 @@ export default function Stylist ({employees}) {
       </div>
     </div>
   </Content>
-
-
   )
 }
 

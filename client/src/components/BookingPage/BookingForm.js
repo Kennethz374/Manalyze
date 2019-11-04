@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Form,Button  } from 'react-bootstrap';
+import { Form,Button,Modal  } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import { Checkbox, Row, Col } from 'antd';
@@ -34,11 +34,56 @@ const openNotification = () => {
   });
 };
 
-const onBook = function(event){ 
-  props.getValue(userName, phoneNumber,date,checkBox);
-  openNotification();
-  history.push('/')
+// const onBook = function(event){ 
+//   props.getValue(userName, phoneNumber,date,checkBox);
+//   // openNotification();
+//   history.push('/')
+// }
+
+function BookingComfirmation() {
+  
+  const [show, setShow] = useState(false);
+
+  const handleSaveBooking = () => {
+    props.getValue(userName, phoneNumber,date,checkBox)
+
+    // console.log(props.getValue)
+    setShow(false)
+    history.push('/')
+    openNotification()
+  };
+  const handleClose = () => setShow(false);
+
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Booking
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Booking Comfirmation</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Comfirm your booking</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSaveBooking}>
+            Save Booking
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 }
+
+
+
+
+
 
   return(
     <Form>
@@ -75,10 +120,10 @@ const onBook = function(event){
       <Checkbox.Group style={{ width: '100%'}} onChange={onChange}>
           <Row className='row'>
             <Col span={10}>
-              <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Hair Cut</Checkbox>
+              <Checkbox value="Men's Hair Cut" style={{ color:'#bc9355'}}>Men's Haircut</Checkbox>
             </Col>
             <Col span={10}>
-              <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Hair Cut</Checkbox>
+              <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Haircut</Checkbox>
             </Col>
             <Col span={10}>
               <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving</Checkbox>
@@ -87,11 +132,12 @@ const onBook = function(event){
               <Checkbox value="Perm Hair" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
             </Col>
             <Col span={10}>
-              <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Dyeing hair</Checkbox>
+              <Checkbox value="Dyeing hair" style={{ color:'#bc9355'}}>Colours</Checkbox>
             </Col>
           </Row>
         </Checkbox.Group>
-        <Button className='button' variant="warning" onClick={onBook}>Booking</Button>
+        <BookingComfirmation />
+        {/* <Button className='button' variant="warning" onClick={onBook}>Booking</Button> */}
       </div>
     </Form>
   )

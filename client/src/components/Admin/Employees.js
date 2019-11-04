@@ -4,11 +4,11 @@ import {Card, Avatar, Col} from 'antd';
 
 export default function Employees(props) {
   const employees = props.employees
-
   return(
     <>
     { employees.map((employee)=>{
       return (
+       
         <div style={{ background: '#ECECEC', padding: '10px' }} >
         <Card span={12} offset={6} title="" bordered={false}>
           <Col>
