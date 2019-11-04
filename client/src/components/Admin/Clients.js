@@ -14,11 +14,32 @@ export default function Clients(props) {
             { client.id === activeClient ?
            ( 
             <Card span={12} offset={6} bordered={false} style={{ borderRadius:"25px"}} onClick={()=>setActiveClient(null)}>
-                <Icon type="star" />
-                <span>Name: {client.name}  </span>
-                <span>Gender: {client.gender}</span>
+                <Row type="flex" >
+                  <Col span={2}>
+                    <img alt="123" src= {client.pictures} style={{borderRadius:"25px", height: 200, width: 200}} />
+                  </Col>
 
-                <Button>Send Promotion</Button>
+                  <Col span={10} >
+                    <Icon type="star" />
+                    <span>Name: {client.name}  </span>
+                    <span>Gender: {client.gender}</span>
+
+                    <Button>Send Promotion</Button>
+                  
+                  </Col>
+
+                  <Col>
+                    <Icon type="star" />
+                    <span>Name: {client.name}  </span>
+                    <span>Gender: {client.gender}</span>
+                    <Button>Send Promotion</Button>
+                  </Col>
+                </Row>
+
+                <Row>
+                  Booking Detail
+
+                </Row>
             
             </Card>
            )
@@ -30,7 +51,6 @@ export default function Clients(props) {
                     <Avatar size="large" src={client.pictures} />
                   </Col>
 
-                {/* <Icon type="star" /> */}
                   <Col span={10}>
                     <div>Name: {client.name}  </div>
                     <div>Email: {client.email}  </div>

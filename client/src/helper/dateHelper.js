@@ -114,8 +114,8 @@ export function bookingInfoWithOnlyDateAndBookings(bookingData, currentDate) {
   //only show past 10 days data, 
   const index = sortedUniqueDate.indexOf(currentDate)
   const sortedNumOfBookings=sortedUniqueDate.map((d)=> getNumberOfBookingsByDate(bookingData,d))
-  const date = sortedUniqueDate.slice(index-10,index+5)
-  const bookings = sortedNumOfBookings.slice(index-10,index+5)
+  const date = sortedUniqueDate.slice(index-4,index+10)
+  const bookings = sortedNumOfBookings.slice(index-4,index+10)
   
   for (let j = 0; j < date.length; j++) {
     Data.push(
