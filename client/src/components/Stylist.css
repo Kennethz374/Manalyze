@@ -1,3 +1,4 @@
+
 .background_img {
   
   margin-top: 20px;
@@ -23,9 +24,8 @@
 .centered {
   color: #bc9355;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-200%, -500%);
+  top: 30%;
+  left: 20%;
 }
 .hairstylists{
   background-color:#1f2125;
@@ -33,8 +33,42 @@
 .hairstylists_text{
   padding-top: 30px;
   padding-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+}
+.service_polular{
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
 }
 .employee{
-  
-  
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+}
+
+
+
+
+
+p {
+  position: relative;
+   font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #bc9355, #fff, #bc9355);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
