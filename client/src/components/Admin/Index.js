@@ -22,12 +22,11 @@ const { Content} = Layout;
 // }
 
 export default function Admin (props){
-<<<<<<< HEAD
+
+
   let date = new Date();
   let dateNow = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toJSON();  //get current Date
-=======
-  // console.log(props)
->>>>>>> b3ed4ae5fcc50591192f4ae950f98abc9beb2b13
+
   const[clients,setClients]=useState([])
   const[bookings,setBookings]=useState([])
   const[services,setServices]=useState([])
@@ -67,8 +66,10 @@ export default function Admin (props){
 
                 <Switch>
                   <Route exact path="/admin" render={() => <Redirect to="/admin/schedule" />} />
+
                   <Route path="/admin/schedule" render={()=> <Schedule clients={clients} employees={props.employees} bookings={bookings} services={services}/>} />
                   <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} bookings={bookings} services={services} employees={props.employees} currentDate={currentDate}/>}/>
+
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
                   <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
 

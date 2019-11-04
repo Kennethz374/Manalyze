@@ -11,7 +11,6 @@ import ServicePie from "./ServicePie"
 import ServiceRevenuePie from "./ServiceRevenuePie"
 
 export default function Statistics(props) {
-  
   return (
     <div className="gutter-example">
       <h4 >Welcome Back! Here is {props.currentDate}'s report for you</h4>
@@ -20,6 +19,7 @@ export default function Statistics(props) {
       <Col className="gutter-row" xs={24} md={12} xl={6} >
         <div className="gutter-box">
           <TotalSales bookings={props.bookings} services={props.services} currentDate={props.currentDate}/>
+
         </div>
       </Col>
 
