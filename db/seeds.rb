@@ -77,8 +77,8 @@ employees = Employee.create([
 
 ])
 
-fakeusers =User.create 
-([
+
+users = User.create([
   {
     name:"Jeremy",
     email: "Jeremy@jeremy.com",
@@ -212,3 +212,40 @@ products=Product.create([
 
 ])
 
+
+
+
+Product.destroy_all
+products=Product.create([
+
+  {
+    name:'Moroccanoil',
+    description:'An shampooing hydratant quotidien infusé d’huile d’argan riche en antioxydants qui reconstitue les nutriments pour désaltérer et nourrir les cheveux secs.',
+    price:30,
+    quantity:15,
+    picture:"https://www.sephora.com/productimages/sku/s1999630-main-zoom.jpg"
+  },
+  {
+    name:'Kerastase',
+    description:'An innovative shampoo specially formulated to treat dry, sensitized hair.',
+    price:40,
+    quantity:10,
+    picture:"https://www.sephora.com/productimages/sku/s2126902-main-zoom.jpg"
+  },
+  {
+    name:'Oribe',
+    description:'Discover the fountain of youth for soft, shiny, ageless hair with Oribe Gold Lust Repair & Restore Conditioner. Blending time-honoured oils and extracts — Cypress, Argan and Maraca — with our revolutionary bio-restorative complex, this ultra-hydrating conditioner softens and revitalizes, smoothing each cuticle to undo the damage of time and style.',
+    price:200,
+    quantity:15,
+    picture:"https://s7d9.scene7.com/is/image/HoltRenfrew1/u_811913014882_01"
+  },
+  {
+    name:'Jack Black Shaving Gel',
+    description:'This powerful, non-greasy Jack Black Dry Erase™ Ultra-Calming Face Cream provides immediate and lasting moisturization for dry skin, calms sensitive skin, and helps reduce redness and irritation. The exclusive formula mimics the structure of natural skin lipids by trapping essential moisture and aiding in the repair and replenishment of the skin’s natural protective barrier. Fortified with skin comforters and anti-irritants, it calms irritated skin and helps reduce redness.',
+    price:23,
+    quantity:21,
+    picture:"https://cdn.shopify.com/s/files/1/0812/3241/products/JAC1003-Jack-Black-post-shave-cooling-gel_x1024.jpeg?v=1556268592"
+  },
+
+
+])
