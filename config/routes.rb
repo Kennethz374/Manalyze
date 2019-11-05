@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do # /api/data
 
-    get '/data', to: 'tests#index'
-    
     resources :employees
     resources :users 
     resources :bookings

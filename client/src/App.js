@@ -20,6 +20,7 @@ const { Footer } = Layout;
 export default function Homepage (props) {
   const[employees,setEmployees]=useState([])
   const[products,setProducts]=useState([])
+  // const[loginUser,setLoginUser]=useState([])
   
   useEffect(()=>{
     Promise.all([
@@ -29,19 +30,8 @@ export default function Homepage (props) {
       setProducts(all[0].data)
       setEmployees(all[1].data)
     })
-
-
-
-
-
-
-    // axios.get('http://localhost:3001/api/employees') // You can simply make your requests to "/api/whatever you want"
-    // .then((response) => {
-    //   // handle success
-    //   setEmployees(response.data)
-
-    // }) 
   }, []) 
+  
   //add this if statement to make sure employee data get feched, or the components will be rendered without the data directly
     if(employees.length === 0) return <Spin size="large" />
 
@@ -54,7 +44,7 @@ export default function Homepage (props) {
           <Route path="/stylists/:employeeID" render={(props) => (
               <Booking employee={employees.find(employee => employee.id === Number(props.match.params.employeeID))} />)
           } />
-          <Route path="/login" component={LoginPage} />
+          <Route path="/login" render={()=><LoginPage employees={employees}/>} />
           <Route path="/hairstylists" render={()=> <DetailStylists employees= {employees}/>}/>
           <Route path="/products" render={()=> <Products products= {products}/>}/>
           <Route path="/services" component={Services} />

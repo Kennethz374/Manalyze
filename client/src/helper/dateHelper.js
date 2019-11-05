@@ -220,4 +220,10 @@ export function dataForRevenuePie (bookings, services) {
   }
   return data
 }
+
+//For clinets detail 
+export function bookingsWithSameClientID (bookings, clientID) {
+  const listOfBookings = bookings.filter((b)=> b.user_id === clientID)
+  return listOfBookings
+}
 // new Date().toJSON().substring(5,10)   today's day in 11-01 format
