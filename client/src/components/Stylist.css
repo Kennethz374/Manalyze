@@ -49,14 +49,14 @@
 
 
 
-p {
+.slogan {
   position: relative;
-   font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
   text-transform: uppercase;
   font-size: 2em;
   letter-spacing: 4px;
   overflow: hidden;
-  background: linear-gradient(90deg, #bc9355, #fff, #bc9355);
+  background: linear-gradient(90deg, #8f816a, #fff, #bc9355);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 3s linear infinite;
@@ -71,4 +71,64 @@ p {
   100% {
     background-position: 500%;
   }
+}
+
+.slogan2{
+  text-align:center;
+  /* background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+  color:#555;
+  font-family:'Roboto';
+  font-weight:300;
+  font-size:32px;
+  padding-top:40vh;
+  height:100vh; */
+  font-size: 25px;
+  
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.slogan2_1{
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.slogan2_1:first-of-type {    /* For increasing performance 
+  ID/Class should've been used. 
+  For a small demo 
+  it's okaish for now */
+animation: showup 7s infinite;
+}
+.slogan2_1:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+.slogan2_1:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+@keyframes showup {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0;}
+}
+
+@keyframes slidein {
+  0% { margin-left:-800px; }
+  20% { margin-left:-800px; }
+  35% { margin-left:0px; }
+  100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+  0% {opacity:0;width:0px;}
+  20% {opacity:1;width:0px;}
+  30% {width:355px;}
+  80% {opacity:1;}
+  100% {opacity:0;width:355px;}
 }

@@ -16,7 +16,7 @@ const servicesList=[
   {
     name:'Men\'s Haircut',
     description:'We are experts at haircutting. Our team has received many accolades for cut and design and they continually educate themselves locally and internationally. Whether you are looking for a classic look or the latest trends, our artists will be able to confidently customize a look for you.',
-    price:30,
+    price:40,
     picture:"https://curriedayspa.com/wp-content/uploads/2018/10/crew-cut.jpg"
   },
   {
@@ -26,9 +26,9 @@ const servicesList=[
     picture:"http://www.ashrafscissorshands.in/images/women-haircut-mumbai.jpg"
   },
   {
-    name:'Shaving',
+    name:'Shaving and Ficial',
     description:'A very rewarding experience which you should take advantage of today.',
-    price:15,
+    price:25,
     picture:"https://images.unsplash.com/photo-1524230616393-d6229fcd2eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
   },
   {
@@ -40,7 +40,7 @@ const servicesList=[
   {
     name:'Colours',
     description:'Getting a colour can be scary when you don’t know what to expect. You can trust that you are in good hands when you come into our salon, because we specialize in colour, and really do have some of the best colourists in the city!',
-    price:60,
+    price:100,
     picture:"https://www.sheknows.com/wp-content/uploads/2018/08/ziqtuvnhbbgra705gmws.jpeg?w=695&h=391&crop=1"
   },
   

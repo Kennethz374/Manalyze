@@ -1,7 +1,9 @@
 
 .products{
   background-color:#1f2125;
+  font-family: 'Playfair Display', serif;
 }
 .products-card{
- border-color: brown;
+  font-size: 10px;
+  font-family: 'Playfair Display', serif;
 }

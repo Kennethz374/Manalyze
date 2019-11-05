@@ -24,46 +24,58 @@ export default function Stylist ({employees}) {
 
       <div className="background_img">
         <div className="centered">
-        <p>I want you to look awesome</p>
+        <p className='slogan'>We want you to look awesome</p>
+        <div className='slogan2'>
+          <div className='slogan2_1'>WELCOME  TO</div> 
+          <div className='slogan2_1'> 
+            <span>SINNETH & HIS FRIENDS </span>
+          </div>
+          </div>
+          </div>
+        </div>
+
+      <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
+        <h2 className='hairstylists_text' style={{textAlign: "center", color:'#bc9355'}}>
+          SINNETH & HIS FRIENDS SALON
+        </h2>
+        <h2 className='service_polular' style={{textAlign: "center", color:'#bc9355'}}>
+          You Deserve Nothing But The Best
+        </h2>
+        
+
+
+
+
+
+        <div className='employees'>
+          <Row  gutter={16} type="flex" justify="center">
+            {employees.map(function(employee) {
+              return (
+                <div key={employee.id}>
+                <Link to={`/stylists/${employee.id}`} >
+                <Col span={6}>
+                  <Card className='employee' 
+                    hoverable
+                    style={{ width: 280,padding:10,borderRadius:"15px"}}
+                    cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
+                  >
+                    <Meta title={employee.name} description={
+                      <>
+                      <div>{employee.title}</div>
+                      <Rate disabled defaultValue={employee.rating} />
+                      </>
+                      } 
+                    />
+                  </Card>
+                </Col>
+                </Link>
+                </div>
+              )})
+            } 
+          </Row> 
         </div>
       </div>
-
-    <div className="hairstylists"style={{  padding: 24, minHeight: 280 }}>
-      <h2 className='hairstylists_text' style={{textAlign: "center", color:'#bc9355'}}>
-      SINNETH & HIS FRIENDS SALON
-      </h2>
-      <h2 className='service_polular' style={{textAlign: "center", color:'#bc9355'}}>
-        You Deserve Nothing But The Best
-      </h2>
-      <div className='employees'>
-        <Row  gutter={16} type="flex" justify="center">
-          {employees.map(function(employee) {
-            return (
-              <div key={employee.id}>
-              <Link to={`/stylists/${employee.id}`} >
-              <Col span={6}>
-                <Card className='employee' 
-                  hoverable
-                  style={{ width: 280,padding:10,borderRadius:"15px"}}
-                  cover={<img alt="employee_picture" src={employee.picture} style={{height:350}}/>}
-                >
-                  <Meta title={employee.name} description={
-                    <>
-                    <div>{employee.title}</div>
-                    <Rate disabled defaultValue={employee.rating} />
-                    </>
-                    } 
-                  />
-                </Card>
-              </Col>
-              </Link>
-              </div>
-            )})
-          } 
-        </Row> 
-      </div>
-    </div>
-  </Content>
+    </Content>
   )
 }
 

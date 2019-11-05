@@ -6,12 +6,11 @@ export default function Loginpage () {
     <>
     <Input size="large"
       placeholder="Enter your username"
-      prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-    ></Input>
+      prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}>
+    </Input>
     <Input.Password placeholder="input password" size="large"/>
     <Button>Submit</Button>
     <Button>Cancel</Button>
-
     </>
   )
 }
