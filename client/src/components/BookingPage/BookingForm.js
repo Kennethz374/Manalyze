@@ -49,8 +49,12 @@ function BookingComfirmation() {
 
     // console.log(props.getValue)
     setShow(false)
-    history.push('/')
-    openNotification()
+    setTimeout(()=>{
+      history.push('/')
+      openNotification()
+    },2000)
+    
+    
   };
   const handleClose = () => setShow(false);
 
@@ -58,7 +62,7 @@ function BookingComfirmation() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="warning" onClick={handleShow}>
         Booking
       </Button>
 
@@ -66,7 +70,11 @@ function BookingComfirmation() {
         <Modal.Header closeButton>
           <Modal.Title>Booking Comfirmation</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Comfirm your booking</Modal.Body>
+        <Modal.Body>
+          <div>Booking Detials:</div>
+          <div>Date:{date}</div>
+          <div>Selected Services:{checkBox}</div>
+          </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -81,12 +89,8 @@ function BookingComfirmation() {
 }
 
 
-
-
-
-
   return(
-    <Form>
+    <Form className='booking_form'>
       <Form.Group controlId="formBasicEmail" style={{ width: 300,marginTop:10}}>
         <Form.Label className='booking_text'>User Name</Form.Label>
         <Form.Control type="text" placeholder="user Name" value={userName}
@@ -103,7 +107,7 @@ function BookingComfirmation() {
       </Form.Group>
       
 
-      <p className='select_date'>Select date</p>
+      <p className='select_date'>Select Date</p>
       <div className='date_picker'>
         <DatePicker 
         selected={startDate}
@@ -126,7 +130,7 @@ function BookingComfirmation() {
               <Checkbox value="Women's Hair Cut" style={{ color:'#bc9355'}}>Women's Haircut</Checkbox>
             </Col>
             <Col span={10}>
-              <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving</Checkbox>
+              <Checkbox value="Shaving" style={{ color:'#bc9355'}}>Shaving and Facial</Checkbox>
             </Col>
             <Col span={10}>
               <Checkbox value="Perm Hair" style={{ color:'#bc9355'}}>Perm Hair</Checkbox>
@@ -137,7 +141,6 @@ function BookingComfirmation() {
           </Row>
         </Checkbox.Group>
         <BookingComfirmation />
-        {/* <Button className='button' variant="warning" onClick={onBook}>Booking</Button> */}
       </div>
     </Form>
   )

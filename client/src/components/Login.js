@@ -4,6 +4,7 @@ import { Input,Icon,Button,Row, Col } from 'antd';
 export default function Loginpage (props) {
   return (
     <>
+
     <Row justify="center" align="middle" style={{margin:"25px", height:800}}>
       <Col span={12} offset={6}>
         <Input size="large"
@@ -19,6 +20,7 @@ export default function Loginpage (props) {
         <Button>Cancel</Button>
       </Col>
     </Row>
+
     </>
   )
 }

@@ -17,6 +17,7 @@ const { Header } = Layout;
         defaultSelectedKeys={["1"]}
         style={{ lineHeight: '64px' }}
         >
+        <Menu.Item ><img alt="123"src='https://cdn.dribbble.com/users/2058165/screenshots/4509745/delf_n_hari_salon4-04.jpg' width="60" height="60"/></Menu.Item>
         <Menu.Item key="1"><Link to="/"> Home </Link></Menu.Item>
         <Menu.Item key="2"><Link to="/hairstylists" > Hairstylists </Link></Menu.Item>
         <Menu.Item key="3"><Link to="/products"> Products </Link></Menu.Item>
