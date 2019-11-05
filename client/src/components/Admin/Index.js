@@ -71,7 +71,7 @@ export default function Admin (props){
                   <Route path="/admin/statistics"  render={()=> <Statistics clients={clients} bookings={bookings} services={services} employees={props.employees} currentDate={currentDate}/>}/>
 
                   <Route path="/admin/employees" render={()=> <Employees employees={props.employees}/>}/>
-                  <Route path="/admin/clients" render={()=> <Clients clients={clients}/>}/>
+                  <Route path="/admin/clients" render={()=> <Clients clients={clients} bookings={bookings} services={services} employees={props.employees}/>}/>
 
                 </Switch>
 

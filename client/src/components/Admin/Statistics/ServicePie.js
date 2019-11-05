@@ -83,7 +83,7 @@ export default function ServicePie (props) {
           <Label
             content="percent"
             formatter={(val, item) => {
-              return item.point.item + ": " + val;
+              return item.point.item ;
             }}
           />
         </Geom>

@@ -1,9 +1,10 @@
 import React from "react"
 // import axios from "axios"
-import {Card, Avatar, Col} from 'antd';
+import {Card, Avatar, Col,Pagination} from 'antd';
 
 export default function Employees(props) {
   const employees = props.employees
+
   return(
     <>
     { employees.map((employee)=>{
@@ -20,6 +21,7 @@ export default function Employees(props) {
     })
 
     }
+
 
 
 
