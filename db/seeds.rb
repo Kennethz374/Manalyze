@@ -164,7 +164,7 @@ def fakeBookings
     @fakeBookings.push({
       user_id: Faker::Number.between(from: 1, to: 300),
       employee_id: Faker::Number.between(from: 1, to: 4),
-      date: Faker::Time.between(from: DateTime.now - 10, to: DateTime.now + 60, format: :short),
+      date: Faker::Time.between(from: DateTime.now - 40, to: DateTime.now + 40, format: :short),
       notes: Faker::Quote.robin,
       service_id: Faker::Number.between(from: 1, to: 4)
     })

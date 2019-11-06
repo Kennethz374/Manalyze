@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 // import axios from "axios"
-import {Card, Avatar, BackTop, Row, Col, Pagination} from 'antd';
+import {Card, Avatar, BackTop, Row, Col, Pagination, Button} from 'antd';
 import {bookingsWithSameClientID} from "../../helper/dateHelper"
 import {getServiceNameByServiceId} from "../../helper/dateHelper"
 import {getEmployeeNameById} from "../../helper/dateHelper"
@@ -11,21 +11,20 @@ export default function Clients(props) {
   const [activeClient, setActiveClient] = useState(null);
   const [page,setPage] =useState({
     minValue: 0,
-    maxValue: 9
+    maxValue: 10
   })
  const handleChange = value => {
     if (value <= 1) {
       setPage({
         minValue: 0,
-        maxValue: 9
+        maxValue: 10
       });
     } else {
       setPage({
-        minValue: page.maxValue,
+        minValue: value * 10 - 10,
         maxValue: value * 10
       });
     }
-    console.log(value)
   };
 
   return(
@@ -87,15 +86,19 @@ export default function Clients(props) {
                     <Avatar size="large" src={client.pictures} />
                   </Col>
 
-                  <Col span={10}>
+                  <Col span={8}>
                     <div>Name: {client.name}  </div>
                     <div>Email: {client.email}  </div>
 
                   </Col>
 
-                  <Col span={10}>
+                  <Col span={8}>
                     <div>Phone#: {client.phoneNumber}</div>
                     <div>Gender: {client.gender}</div>
+                  </Col>
+
+                  <Col span={4}>
+                    <Button>Send Promotion Code</Button>
                   </Col>
                 </Row>
               </Card>
