@@ -33,7 +33,8 @@ export default function Homepage (props) {
   }, []) 
   
   //add this if statement to make sure employee data get feched, or the components will be rendered without the data directly
-    if(employees.length === 0) return <Spin size="large" />
+    if(products.length === 0 || employees.length === 0) 
+      return <Spin size="large" />
 
     return (
       <Layout className="layout">

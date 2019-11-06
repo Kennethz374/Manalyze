@@ -48,7 +48,7 @@ employees = Employee.create([
     salary: 10,
     picture: "https://scontent-yyz1-1.cdninstagram.com/vp/d1bed3d9307350d7b783b8f649e653cc/5E383979/t51.2885-15/sh0.08/e35/s640x640/69926372_198128774535221_2316886523191485007_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=105",
     rating: 4,
-    description: "Hi, let's do it !!! Just do it !!!",
+    description: "In me, tiger sniffs the rose",
     title: "Lead Hairstylist",
     phone: "778 888 8888"
   },
@@ -58,7 +58,7 @@ employees = Employee.create([
     salary: 100,
     picture: "https://images.unsplash.com/photo-1533142215-a17cdfb95243?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     rating: 4,
-    description: "I am smart~ let's do it ~~~~~~",
+    description: "Hi, let's do it !!! Just do it !!",
     title: "Hairstylist",
     phone: "778 855 3332"
 

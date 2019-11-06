@@ -109,10 +109,12 @@ function getNumberOfBookingsByDate(bookings, date) {
 }
 
 export function bookingInfoWithOnlyDateAndBookings(bookingData, currentDate) {
+  console.log('bookingData',bookingData)
   let Data = [];
   const sortedUniqueDate= getSortedUniqueDate(bookingData)
   //only show past 10 days data, 
   const index = sortedUniqueDate.indexOf(currentDate)
+  console.log('currentDate',currentDate)
   const sortedNumOfBookings=sortedUniqueDate.map((d)=> getNumberOfBookingsByDate(bookingData,d))
   const date = sortedUniqueDate.slice(index-4,index+10)
   const bookings = sortedNumOfBookings.slice(index-4,index+10)
@@ -189,6 +191,7 @@ export function dataForServicePie(bookings, services) {
   let data = [];
   let ServiceCounts = [];
   let arrOfServices= services.map(s => s.id)
+  console.log('arrOfServices',arrOfServices)
   for (let i = 0; i < arrOfServices.length;i++){
     ServiceCounts.push(getServiceCounts(bookings, arrOfServices[i]))
   }
