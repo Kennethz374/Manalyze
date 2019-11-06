@@ -94,7 +94,7 @@ function BookingComfirmation() {
       <Form.Group controlId="formBasicEmail" style={{ width: 300,marginTop:10}}>
         <Form.Label className='booking_text'>User Name</Form.Label>
         <Form.Control type="text" placeholder="user Name" value={userName}
-            onChange={(event) => setName(event.target.value)}/>
+            onChange={(event) => (event.target.value)}/>
       </Form.Group>
 
 
