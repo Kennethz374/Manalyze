@@ -1,6 +1,5 @@
 class Api::ProductsController < ApplicationController
   include ActionController::MimeResponds
-
   def index
     @products = Product.all
 
