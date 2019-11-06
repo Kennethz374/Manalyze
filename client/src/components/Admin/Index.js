@@ -26,7 +26,7 @@ export default function Admin (props){
 
   let date = new Date();
   let dateNow = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toJSON();  //get current Date
-
+console.log('dateNow',dateNow)
   const[clients,setClients]=useState([])
   const[bookings,setBookings]=useState([])
   const[services,setServices]=useState([])

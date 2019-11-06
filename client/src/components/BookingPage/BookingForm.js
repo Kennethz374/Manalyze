@@ -10,7 +10,7 @@ export default function BookingForm(props){
   const history = useHistory()
   // console.log(props.getValue)
 //form//
-  const[userName, setName] = useState('');
+  const[email, setName] = useState('');
   // const[email,setEmail] = useState('')
   const[phoneNumber, setPhoneNumber]= useState('');
   // const[gender, setGender] = useState('')
@@ -45,7 +45,7 @@ function BookingComfirmation() {
   const [show, setShow] = useState(false);
 
   const handleSaveBooking = () => {
-    props.getValue(userName, phoneNumber,date,checkBox)
+    props.getValue(email, phoneNumber,date,checkBox)
 
     // console.log(props.getValue)
     setShow(false)
@@ -92,9 +92,12 @@ function BookingComfirmation() {
   return(
     <Form className='booking_form'>
       <Form.Group controlId="formBasicEmail" style={{ width: 300,marginTop:10}}>
-        <Form.Label className='booking_text'>User Name</Form.Label>
-        <Form.Control type="text" placeholder="user Name" value={userName}
-            onChange={(event) => (event.target.value)}/>
+
+        <Form.Label className='booking_text'>Email Address</Form.Label>
+        <Form.Control type="text" placeholder="Email Address" value={email}
+            onChange={(event) => setName(event.target.value)}/>
+
+       
       </Form.Group>
 
 

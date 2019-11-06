@@ -23,7 +23,7 @@ const servicesList=[
     name:'Women\'s Haircut',
     description:'Short and long, classic and cutting-edge, fine or thick, straight or textured…. Based on your lifestyle, how you like to wear your hair and how often you like to style and maintain, we have a stylist for you.',
     price:40,
-    picture:"http://www.ashrafscissorshands.in/images/women-haircut-mumbai.jpg"
+    picture:"https://www.downtownmission.com/wp-content/uploads/2019/09/stylist-cutting-hair.jpg"
   },
   {
     name:'Shaving and Ficial',
