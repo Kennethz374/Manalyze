@@ -20,7 +20,7 @@ const { Footer } = Layout;
 export default function Homepage (props) {
   const[employees,setEmployees]=useState([])
   const[products,setProducts]=useState([])
-  // const[loginUser,setLoginUser]=useState([])
+  const[loginUser,setLoginUser]=useState(null)
   
   useEffect(()=>{
     Promise.all([
