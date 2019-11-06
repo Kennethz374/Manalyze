@@ -9,6 +9,7 @@ import Services from "./components/Services"
 import About from "./components/About"
 import Admin from "./components/Admin/Index"
 import Navigation from "./components/Navigation"
+import Register from "./components/Register"
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,8 +21,24 @@ const { Footer } = Layout;
 export default function Homepage (props) {
   const[employees,setEmployees]=useState([])
   const[products,setProducts]=useState([])
-  // const[loginUser,setLoginUser]=useState([])
+  const[loginUser,setLoginUser]=useState(null)
+  const [users, setUsers] = useState(null)
+
+  const setAdmin = function (name) {
+    setLoginUser(name)
+  }
+
+  const setLogout = function () {
+    setLoginUser(null)
+    setUsers(null)
+  }
+  const ActiveUser = function (name) {
+    setUsers(name)
+  }
+
+
   
+   
   useEffect(()=>{
     Promise.all([
       Promise.resolve(axios.get('http://localhost:3001/api/products')),
@@ -38,18 +55,19 @@ export default function Homepage (props) {
     return (
       <Layout className="layout">
         <Router>
-          <Navigation/>
+          <Navigation users={users} ActiveUser={ActiveUser} loginUser={loginUser} setLogout={setLogout}/>
           <Switch>
           <Route exact path="/" render={() => <Stylist employees={employees}/> } />
           <Route path="/stylists/:employeeID" render={(props) => (
               <Booking employee={employees.find(employee => employee.id === Number(props.match.params.employeeID))} />)
           } />
-          <Route path="/login" render={()=><LoginPage employees={employees}/>} />
+          <Route path="/login" render={()=><LoginPage  users={users} ActiveUser={ActiveUser} setAdmin={setAdmin} employees={employees} loginUser={loginUser}/>} />
           <Route path="/hairstylists" render={()=> <DetailStylists employees= {employees}/>}/>
           <Route path="/products" render={()=> <Products products= {products}/>}/>
           <Route path="/services" component={Services} />
           <Route path="/aboutus" component={About} />
-          <Route path="/admin" render={()=> <Admin employees={employees}/>}/>
+          <Route path="/register" component={Register} />
+          {loginUser==="Admin"&&<Route path="/admin" render={()=> <Admin employees={employees}/>}/>}
           </Switch>
 
         </Router>

@@ -68,7 +68,7 @@ function monthCellRender(value, props) {
   const num = getMonthData(value, props);
   return num ? (
     <div className="notes-month">
-      <section>{num>=80?<Badge count={num}/>:<Badge count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
+      <section>{num>=80?<Badge overflowCount={999} count={num}/>:<Badge overflowCount={999} count={num} style={{ backgroundColor: '#52c41a' }} />}</section>
     </div>  
   ) : null;
 }
