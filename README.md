@@ -17,10 +17,7 @@ In this project, we use a barber shop as an example of small business to demostr
 The highlight of this app is the analytics parts. We wish we could provide as many as analytics that help business owner to make better decisions. In the demo, we provide a bar chart for daily income providing instant feedback to owner everyday. As well, we display numbers of bookings/ workload each day, so they can better arrange man power. Parts that can scale is we could also provide inventory control functionality. Also functionalities that are marketing related such as sending promotion code to certain customers
 
 # Demo of App
-!["Homepage Demo"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/HomePageDemo.gif?raw=true)
+!["Homepage Demo"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/Demo_Homepage.gif?raw=true)
 
-!["Booking"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/ManalyzBookingDemo.gif?raw=true)
+!["Admin"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/AdminDemo.gif?raw=true)
 
-!["Admin"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/LoginDemoAdmin.gif?raw=true)
-
-!["others"](https://github.com/Kennethz374/Manalyze/blob/master/client/public/imgsForReadMe/ManalyzeOtherPages.gif?raw=true)
