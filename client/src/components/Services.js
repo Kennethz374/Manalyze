@@ -1,15 +1,12 @@
 
 import React from "react"
-
 import { Layout} from 'antd';
-import { Carousel } from 'antd';
 import './Products.css'
-import { Col, Row, Card, Rate} from "antd" 
+import { Col, Row, Card} from "antd" 
 import { Divider } from 'antd'
 
 
 
-const { Meta } = Card;
 const {Content} = Layout
 
 const servicesList=[

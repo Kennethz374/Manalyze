@@ -2,7 +2,7 @@ import React from "react"
 // import axios from 'axios';
 
 import EmployeeBar from "./employeeBar"
-import {Row,Col,Tag} from "antd"
+import {Row,Col} from "antd"
 import Gender from "./gender"
 import  './statistics.css'
 import ChartTab from "./ChartTab"
